@@ -28,6 +28,7 @@ List of all the things I need to do to improve this repo !
 ### Adding features
 - [ ] Adding sub-parser to change the parameters of the problems
 - [ ] Setting the size of cmd window to either a fix value or depending of what problem.print_problem() will print
+- [ ] Adding pictures to cmd (for example to print the picture in Problem 15's statement)
 - [ ] Adding an automatic tester for when I try to change an existing solution
 
 ### Fixing
