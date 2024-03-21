@@ -17,7 +17,7 @@ class Problem18(Problem):
         if 'triangle_string' not in kwargs.keys():
             raise ValueError("triangle_string not specified")
         
-        self.answer, self.time_taken = self.resolution(triangle_string = kwargs['triangle_string'])
+        self.answer, self.time_taken = self.solve(triangle_string = kwargs['triangle_string'])
         
         self.detailed_answer = f"The maximum total from top to bottom of the given triangle is {format_number(self.answer)}"
             
@@ -47,7 +47,7 @@ class Problem18(Problem):
                 
     
     @timing
-    def resolution(self, triangle_string):
+    def solve(self, triangle_string):
         new_triangle = self.new_triangle(triangle_string)
         while len(new_triangle)!=1:
             new_triangle = self.new_triangle(new_triangle)

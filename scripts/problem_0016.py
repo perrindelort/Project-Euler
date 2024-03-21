@@ -17,13 +17,13 @@ class Problem16(Problem):
         if 'power_of_2' not in kwargs.keys():
             raise ValueError("power_of_2 not specified")
         
-        self.answer, self.time_taken = self.resolution(power_of_2 = kwargs['power_of_2'])
+        self.answer, self.time_taken = self.solve(power_of_2 = kwargs['power_of_2'])
         
         self.detailed_answer = f"The sum of the digits of 2^{kwargs['power_of_2']} is {format_number(self.answer)}"
             
     
     @timing
-    def resolution(self, power_of_2):
+    def solve(self, power_of_2):
         nombre = 2**power_of_2
         string = str(nombre)
         somme=0

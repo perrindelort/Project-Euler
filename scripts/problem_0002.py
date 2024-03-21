@@ -18,7 +18,7 @@ class Problem2(Problem):
         if 'upper_bound' not in kwargs.keys():
             raise ValueError("upperbound not specified")
         
-        self.answer, self.time_taken = self.resolution(upper_bound = kwargs['upper_bound'])
+        self.answer, self.time_taken = self.solve(upper_bound = kwargs['upper_bound'])
         
         self.detailed_answer = f"The sum of even-valued Fibonacci terms that does not exceed {format_number(kwargs['upper_bound'])} is {format_number(self.answer)}"
     
@@ -33,7 +33,7 @@ class Problem2(Problem):
         return L
     
     @timing
-    def resolution(self, upper_bound):
+    def solve(self, upper_bound):
         s=2
         fibo_n2=1
         fibo_n1=2

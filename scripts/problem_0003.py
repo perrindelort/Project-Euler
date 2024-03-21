@@ -18,13 +18,13 @@ class Problem3(Problem):
         if 'number_to_factor' not in kwargs.keys():
             raise ValueError("number_to_factor not specified")
         
-        self.answer, self.time_taken = self.resolution(number_to_factor = kwargs['number_to_factor'])
+        self.answer, self.time_taken = self.solve(number_to_factor = kwargs['number_to_factor'])
         
         self.detailed_answer = f"The largest prime factor of {format_number(kwargs['number_to_factor'])} is {format_number(self.answer)}"
     
     
     @timing
-    def resolution(self, number_to_factor):
+    def solve(self, number_to_factor):
         L=[]
         m=number_to_factor
         while m!=1 or m!=m:

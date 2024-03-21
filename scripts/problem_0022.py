@@ -16,13 +16,13 @@ class Problem22(Problem):
         super().__init__(path)
         
         
-        self.answer, self.time_taken = self.resolution()
+        self.answer, self.time_taken = self.solve()
         
         self.detailed_answer = f"The total of all the name score in the file is {format_number(self.answer)}"
             
     
     @timing
-    def resolution(self, **kwargs):
+    def solve(self, **kwargs):
         lines = load_data_from_txt(self.problem_number)
         lines.sort()
         score_tot = 0

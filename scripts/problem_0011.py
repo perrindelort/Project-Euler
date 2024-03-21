@@ -18,13 +18,13 @@ class Problem11(Problem):
         if 'matrice' not in kwargs.keys():
             raise ValueError("matrice not specified")
         
-        self.answer, self.time_taken = self.resolution(matrice = kwargs['matrice'])
+        self.answer, self.time_taken = self.solve(matrice = kwargs['matrice'])
         
         self.detailed_answer = f"The greatest product of four adjacents number in the same direction in the given grid is {format_number(self.answer)}"
             
     
     @timing
-    def resolution(self, matrice):
+    def solve(self, matrice):
         produit = 0
         for i in range(400):
             if (0<=i-63):

@@ -18,7 +18,7 @@ class Problem7(Problem):
         if 'prime_rank' not in kwargs.keys():
             raise ValueError("prime_rank not specified")
         
-        self.answer, self.time_taken = self.resolution(prime_rank = kwargs['prime_rank'])
+        self.answer, self.time_taken = self.solve(prime_rank = kwargs['prime_rank'])
         
         self.detailed_answer = f"The {format_number(kwargs['prime_rank'])}st prime is {format_number(self.answer)}"
             
@@ -33,7 +33,7 @@ class Problem7(Problem):
         return True
     
     @timing
-    def resolution(self, prime_rank):
+    def solve(self, prime_rank):
         L=[]
         i=2
         while len(L) != prime_rank:

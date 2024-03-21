@@ -17,13 +17,13 @@ class Problem13(Problem):
         if 'numbers' not in kwargs.keys():
             raise ValueError("numbers not specified")
         
-        self.answer, self.time_taken = self.resolution(numbers = kwargs['numbers'])
+        self.answer, self.time_taken = self.solve(numbers = kwargs['numbers'])
         
         self.detailed_answer = f"The first 10 digits of the sum of these 100 50-digit is {format_number(self.answer)}"
             
     
     @timing
-    def resolution(self, numbers):
+    def solve(self, numbers):
         s = 0
         for number in numbers:
             s+= number

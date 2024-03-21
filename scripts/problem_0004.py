@@ -18,7 +18,7 @@ class Problem4(Problem):
         if 'upper_bound' not in kwargs.keys():
             raise ValueError("upper_bound not specified")
         
-        self.answer, self.time_taken = self.resolution(upper_bound = kwargs['upper_bound'])
+        self.answer, self.time_taken = self.solve(upper_bound = kwargs['upper_bound'])
         
         self.detailed_answer = f"The largest palindromic made from the product of two {len(str(kwargs['upper_bound']))-1}-digits number is {format_number(self.answer)}"
             
@@ -31,7 +31,7 @@ class Problem4(Problem):
         return True
     
     @timing
-    def resolution(self, upper_bound):
+    def solve(self, upper_bound):
         L=[]
         for i in range(1,upper_bound):
             for j in range(1,upper_bound):

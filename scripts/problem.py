@@ -18,7 +18,7 @@ class Problem():
         
        
     @timing    
-    def resolution(self, **kwargs):
+    def solve(self, **kwargs):
         pass
     
     def print_problem(self):

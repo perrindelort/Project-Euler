@@ -17,7 +17,7 @@ class Problem19(Problem):
         if 'final_year' not in kwargs.keys():
             raise ValueError("final_year not specified")
         
-        self.answer, self.time_taken = self.resolution(final_year = kwargs['final_year'])
+        self.answer, self.time_taken = self.solve(final_year = kwargs['final_year'])
         
         self.detailed_answer = f"The number of sundays that fell on the first of the month during the 20th century is {format_number(self.answer)}"
             
@@ -59,7 +59,7 @@ class Problem19(Problem):
             return False
     
     @timing
-    def resolution(self, final_year):
+    def solve(self, final_year):
         year = 1900
         first_day = 1
         count = 0

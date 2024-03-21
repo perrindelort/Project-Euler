@@ -18,7 +18,7 @@ class Problem12(Problem):
         if 'threshold' not in kwargs.keys():
             raise ValueError("threshold not specified")
         
-        self.answer, self.time_taken = self.resolution(threshold = kwargs['threshold'])
+        self.answer, self.time_taken = self.solve(threshold = kwargs['threshold'])
         
         self.detailed_answer = f"The first triangle number to have over {format_number(kwargs['threshold'])} divisors is {format_number(self.answer)}"
             
@@ -44,7 +44,7 @@ class Problem12(Problem):
         return L
     
     @timing
-    def resolution(self, threshold):
+    def solve(self, threshold):
         i=1
         s=1
         n=0

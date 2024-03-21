@@ -18,7 +18,7 @@ class Problem20(Problem):
         if 'target' not in kwargs.keys():
             raise ValueError("target not specified")
         
-        self.answer, self.time_taken = self.resolution(target = kwargs['target'])
+        self.answer, self.time_taken = self.solve(target = kwargs['target'])
         
         self.detailed_answer = f"The sum of the digits of {format_number(kwargs['target'])}! is {format_number(self.answer[0])}; \n{format_number(kwargs['target'])}!={format_number(self.answer[1])}"
         
@@ -26,7 +26,7 @@ class Problem20(Problem):
         self.answer = self.answer[0]
     
     @timing
-    def resolution(self, target):
+    def solve(self, target):
         number = factorial(target)
         string = str(number)
         somme = 0

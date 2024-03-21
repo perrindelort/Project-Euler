@@ -18,13 +18,13 @@ class Problem21(Problem):
         if 'upper_bound' not in kwargs.keys():
             raise ValueError("upper_bound not specified")
         
-        self.answer, self.time_taken = self.resolution(upper_bound = kwargs['upper_bound'])
+        self.answer, self.time_taken = self.solve(upper_bound = kwargs['upper_bound'])
         
         self.detailed_answer = f"The sum of all amicable number under {format_number(kwargs['upper_bound'])} is {format_number(self.answer)}"
             
     
     @timing
-    def resolution(self, upper_bound):
+    def solve(self, upper_bound):
         dictionaryDivisor = {}
         keys = [2]*upper_bound
         for i in range(2,upper_bound):

@@ -17,13 +17,13 @@ class Problem17(Problem):
         if 'arg' not in kwargs.keys():
             raise ValueError("arg not specified")
         
-        self.answer, self.time_taken = self.resolution(arg = kwargs['arg'])
+        self.answer, self.time_taken = self.solve(arg = kwargs['arg'])
         
         self.detailed_answer = f"Problem not yet implemented !"
             
     
     @timing
-    def resolution(self, **kwargs):
+    def solve(self, **kwargs):
         return None, None
 
 

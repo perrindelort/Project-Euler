@@ -17,7 +17,7 @@ class Problem5(Problem):
         if 'upper_limit' not in kwargs.keys():
             raise ValueError("upper_limit not specified")
         
-        self.answer, self.time_taken = self.resolution(upper_limit = kwargs['upper_limit'])
+        self.answer, self.time_taken = self.solve(upper_limit = kwargs['upper_limit'])
 
         
         self.detailed_answer = f"The smallest positive integer that is evenly divisible with no remainder by all the numbers from 1 to {format_number(kwargs['upper_limit'])} is {format_number(self.answer)}"
@@ -35,7 +35,7 @@ class Problem5(Problem):
         return L
     
     @timing
-    def resolution(self, upper_limit):
+    def solve(self, upper_limit):
         L=[2]
         for i in range(3,upper_limit+1):
             L2 = self.facteursPremiers(i)

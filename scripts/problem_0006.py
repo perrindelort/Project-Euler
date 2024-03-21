@@ -17,13 +17,13 @@ class Problem6(Problem):
         if 'upper_bound' not in kwargs.keys():
             raise ValueError("upper_bound not specified")
         
-        self.answer, self.time_taken = self.resolution(upper_bound = kwargs['upper_bound'])
+        self.answer, self.time_taken = self.solve(upper_bound = kwargs['upper_bound'])
         
         self.detailed_answer =f"The difference between the sum of the squares of the first {format_number(kwargs['upper_bound'])} natural numbers and the square of the sum is {format_number(self.answer)}"
             
     
     @timing
-    def resolution(self, upper_bound):
+    def solve(self, upper_bound):
         s1=0
         s2=0
         for i in range(upper_bound + 1):

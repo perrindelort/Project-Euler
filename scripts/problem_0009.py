@@ -17,13 +17,13 @@ class Problem9(Problem):
         if 'target' not in kwargs.keys():
             raise ValueError("target not specified")
         
-        self.answer, self.time_taken = self.resolution(target = kwargs['target'])
+        self.answer, self.time_taken = self.solve(target = kwargs['target'])
         
         self.detailed_answer = f"The value of the products a•b•c where (a,b,c) is the only pythagorean triplet s.t. a+b+c={format_number(kwargs['target'])} is {format_number(self.answer)}"
             
     
     @timing
-    def resolution(self, target):
+    def solve(self, target):
         for c in range(2,target):
             for b in range(c):
                 for a in range(b):

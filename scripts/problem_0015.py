@@ -20,7 +20,7 @@ class Problem15(Problem):
         if 'width' not in kwargs.keys():
             raise ValueError("width not specified")
         
-        self.answer, self.time_taken = self.resolution(length = kwargs['length'],
+        self.answer, self.time_taken = self.solve(length = kwargs['length'],
                                                        width = kwargs['width']
                                                        )
         
@@ -28,7 +28,7 @@ class Problem15(Problem):
             
     
     @timing
-    def resolution(self, length, width):
+    def solve(self, length, width):
         # We specify int here as the scipy function uses gamma function and thus return a float and not an int
         return int(scipy.special.binom(length+width,width))
 

@@ -17,13 +17,13 @@ class ProblemXXX(Problem):
         if 'arg' not in kwargs.keys():
             raise ValueError("arg not specified")
         
-        self.answer, self.time_taken = self.resolution(arg = kwargs['arg'])
+        self.answer, self.time_taken = self.solve(arg = kwargs['arg'])
         
         self.detailed_answer = f" is {format_number(self.answer)}"
             
     
     @timing
-    def resolution(self, **kwargs):
+    def solve(self, **kwargs):
         pass
 
 

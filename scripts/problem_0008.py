@@ -19,14 +19,14 @@ class Problem8(Problem):
         if 'number_of_adjacents_digits' not in kwargs.keys():
             raise ValueError("number_of_adjacents_digits not specified")
         
-        self.answer, self.time_taken = self.resolution(large_number_string = kwargs['large_number_string'],
+        self.answer, self.time_taken = self.solve(large_number_string = kwargs['large_number_string'],
                                                        number_of_adjacents_digits = kwargs['number_of_adjacents_digits'])
         
         self.detailed_answer = f"The biggest product formed from {format_number(kwargs['number_of_adjacents_digits'])} adjacent digits is {format_number(self.answer)}"
             
     
     @timing
-    def resolution(self, large_number_string, number_of_adjacents_digits):
+    def solve(self, large_number_string, number_of_adjacents_digits):
         produit = 0
         for i in range(len(large_number_string)-number_of_adjacents_digits):
             p=1

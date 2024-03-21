@@ -16,13 +16,13 @@ class Problem1(Problem):
         
         if 'upper_bound' not in kwargs.keys():
             raise ValueError("upper_bound not specified")
-        self.answer, self.time_taken = self.resolution(upper_bound = kwargs['upper_bound'])
+        self.answer, self.time_taken = self.solve(upper_bound = kwargs['upper_bound'])
         
         self.detailed_answer = f"The sum of all the multiples of 3 or 5 below {format_number(kwargs['upper_bound'])} is {format_number(self.answer)}"
             
     
     @timing
-    def resolution(self, upper_bound):
+    def solve(self, upper_bound):
         s = 0
         for n in range(upper_bound):
             if n%3==0 or n%5==0:
