@@ -14,7 +14,8 @@ TITLE = {1 : 'Multiples of 3 or 5',
          7 : '10001st Prime',
          8 : 'Largest Product in a Series',
          9 : 'Special Pythagorean Triplet',
-         10 : 'Summation of Primes'}
+         10 : 'Summation of Primes',
+         11 : 'Largest Product in a Grid'}
 
 def get_title(problem_number):
     return TITLE[problem_number]

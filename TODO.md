@@ -3,10 +3,13 @@
 List of all the things I need to do to improve this repo !
 
 ## Problems where I'm not fond of my solution and thus have to be optimized
-### Problems to optimize
+### Because of brute forcing
 - [ ] Problem 2
 - [ ] Problem 9
 - [ ] Problem 10
+
+### Because the solution is not generalizable
+- [ ] Problem 11
 
 ## Repo modifications
 ### Growing the repo
