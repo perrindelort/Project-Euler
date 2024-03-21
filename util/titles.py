@@ -29,7 +29,8 @@ TITLE = {1 : 'Multiples of 3 or 5',
          22 : 'Names Scores',
          23 : 'Non-Abundant Sums',
          24 : 'Lexicographic Permutations',
-         25: '1000-digit Fibonacci Number'
+         25: '1000-digit Fibonacci Number',
+         26 : 'Reciprocal Cycles'
          }
 
 def get_title(problem_number):
