@@ -21,7 +21,8 @@ REPLACEMENTS = {'</p>' : '\n',
                 '\mathbf' : '',
                 r'\\' : '',
                 r'\to' : '→',
-                r'\ne' : '≠'
+                r'\ne' : '≠',
+                r'\lt' : '<'
                 }
 
 REGEX_SUB = {r'<span class="tooltiptext">.*?</span></strong>' : '',
