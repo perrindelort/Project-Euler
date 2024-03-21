@@ -10,7 +10,7 @@ import os
 from util.util import timing, format_number
 from scripts.problem import Problem
 
-class ProblemXXX(Problem):
+class Problem23(Problem):
     def __init__(self, path = os.path.realpath(__file__), **kwargs):
         super().__init__(path)
         
@@ -50,5 +50,5 @@ class ProblemXXX(Problem):
         return int(upper_bound*(upper_bound+1)/2 - sum(sum_abundant_numbers_list) - upper_bound)
 
 if __name__ == '__main__':
-    problem = ProblemXXX(upper_bound = 28_123)
+    problem = Problem23(upper_bound = 28_123)
     problem.print_problem()
