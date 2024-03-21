@@ -19,7 +19,7 @@ class Problem18(Problem):
         
         self.answer, self.time_taken = self.resolution(triangle_string = kwargs['triangle_string'])
         
-        self.detailed_answer = f" is {format_number(self.answer)}"
+        self.detailed_answer = f"The maximum total from top to bottom of the given triangle is {format_number(self.answer)}"
             
     def new_triangle(self,triangle):
         new_triangle = triangle
