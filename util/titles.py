@@ -19,7 +19,8 @@ TITLE = {1 : 'Multiples of 3 or 5',
          12 : 'Highly divisible triangular number',
          13 : 'Large Sum',
          14 : 'Longest Collatz Sequence',
-         15 : 'Lattice Paths'
+         15 : 'Lattice Paths',
+         16 : 'Power Digit Sum'
          }
 
 def get_title(problem_number):
