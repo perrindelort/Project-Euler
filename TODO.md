@@ -7,6 +7,7 @@ List of all the things I need to do to improve this repo !
 - [ ] Problem 2
 - [ ] Problem 9
 - [ ] Problem 10
+- [ ] Problem 12
 
 ### Because the solution is not generalizable
 - [ ] Problem 11

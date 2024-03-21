@@ -12,10 +12,17 @@ REPLACEMENTS = {'</p>' : '\n',
                 '$' : '',
                 '\dots' : '...',
                 '\\times' : '×',
-                '\,' : ' '
+                '\,' : ' ',
+                '&amp;\colon' : ':',
+                r'\begin{align}' : '',
+                r'\end{align}' : '',
+                '\mathbf' : '',
+                
+                r'\\' : '',
                 }
 
-REGEX_SUB = {r'<span class="tooltiptext">.*?</span></strong>' : ''}
+REGEX_SUB = {r'<span class="tooltiptext">.*?</span></strong>' : '',
+             r'\{(\d+)\}': r'\1'}
 
         
 def html_to_string(html_code):
