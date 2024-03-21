@@ -16,7 +16,8 @@ TITLE = {1 : 'Multiples of 3 or 5',
          9 : 'Special Pythagorean Triplet',
          10 : 'Summation of Primes',
          11 : 'Largest Product in a Grid',
-         12 : 'Highly divisible triangular number'
+         12 : 'Highly divisible triangular number',
+         13 : 'Large Sum'
          }
 
 def get_title(problem_number):
