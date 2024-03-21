@@ -12,8 +12,8 @@ List of all the things I need to do to improve this repo !
 - [ ] Problem 11
 
 ## Repo modifications
-### Growing the repo
-- [ ] Adding and formatting te ~100 problems I've solved !
+### Growing the repository
+- [ ] Adding and formatting the ~100 problems I've solved !
 
 ### Files
 - [ ] generate requirements.txt
