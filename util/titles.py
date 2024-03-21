@@ -20,7 +20,8 @@ TITLE = {1 : 'Multiples of 3 or 5',
          13 : 'Large Sum',
          14 : 'Longest Collatz Sequence',
          15 : 'Lattice Paths',
-         16 : 'Power Digit Sum'
+         16 : 'Power Digit Sum',
+         17 : 'Number Letter Counts'
          }
 
 def get_title(problem_number):
