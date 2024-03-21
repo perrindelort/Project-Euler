@@ -11,11 +11,11 @@
 
 ## Getting started
 ### Installation
-* Clone this repo:
+1. Clone this repository:
 ```bash
 git clone https://github.com/perrindelort/Project-Euler
 ```
-* Create a python environment :
+2. Create a python environment :
 - Using requirements.txt
 ```bash
 conda create --file requirements.txt
@@ -25,7 +25,7 @@ conda create --file requirements.txt
 conda env create -f environment.yml
 ```
 
-* Run a given solution:
+3. Run a given solution:
 ```bash
 python main.py -n <solution_number>
 ```
