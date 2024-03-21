@@ -12,6 +12,7 @@ import PIL.Image
 REPLACEMENTS = {'</p>' : '\n',
                 '$' : '',
                 '\dots' : '...',
+                r'\cdots' : '...',
                 '\\times' : '×',
                 '\,' : ' ',
                 '&amp;\colon' : ':',
@@ -19,7 +20,7 @@ REPLACEMENTS = {'</p>' : '\n',
                 r'\end{align}' : '',
                 '\mathbf' : '',
                 r'\\' : '',
-                r'\to' : '→'
+                r'\to' : '→',
                 }
 
 REGEX_SUB = {r'<span class="tooltiptext">.*?</span></strong>' : '',
