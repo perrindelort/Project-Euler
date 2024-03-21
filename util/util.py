@@ -29,7 +29,7 @@ def get_problem_number_from_filename(path):
     file_name = os.path.basename(path)
         
     # Use of regexto extract problem number
-    regex = r"_(\d+)\."
+    regex = r"_0*(\d+)\."
     # Rechercher le nombre dans le nom de fichier
     match = re.search(regex, file_name)
     return int(match.group(1))

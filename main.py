@@ -16,7 +16,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # Get the module name from the command line argument
-    script_name = f"scripts.problem_{args.problem_number}"
+    problem_number_str = str(args.problem_number).zfill(4)
+    script_name = f"scripts.problem_{problem_number_str}"
 
     # Get the module object using __import__
     script = __import__(script_name)

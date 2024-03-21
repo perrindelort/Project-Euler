@@ -35,7 +35,8 @@ def html_to_string(html_code):
 
 
 def get_statement(problem_number):
-    filename = f"././data/html_statements/problem_{problem_number}.txt"
+    problem_number_str = str(problem_number).zfill(4)
+    filename = f"././data/html_statements/problem_{problem_number_str}.txt"
 
     with open(filename, "r", encoding="utf-8") as file:
         content = file.read()
