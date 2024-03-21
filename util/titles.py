@@ -25,7 +25,8 @@ TITLE = {1 : 'Multiples of 3 or 5',
          18 : 'Maximum Path Sum I',
          19 : 'Counting Sundays',
          20 : 'Factorial Digit Sum',
-         21 : 'Amicable Numbers'
+         21 : 'Amicable Numbers',
+         22 : 'Names Scores'
          }
 
 def get_title(problem_number):

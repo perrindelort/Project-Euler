@@ -49,7 +49,7 @@ def html_to_string(html_code, problem_number):
         img_src = img_tag['src']
         
         problem_number_str = str(problem_number).zfill(4)
-        ascii_img = png_to_ascii(f"././data//images/problem_{problem_number_str}.png")
+        ascii_img = png_to_ascii(f"././data/images/problem_{problem_number_str}.png")
 
         img_tag.replace_with(ascii_img)
 

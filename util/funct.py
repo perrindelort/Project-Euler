@@ -13,3 +13,12 @@ def factorial(n):
         return 1
     else:
         return n*factorial(n-1)
+    
+def load_data_from_txt(problem_number, split = True, sep =','):
+    problem_number_str = str(problem_number).zfill(4)
+    path = f"././data/data/problem_{problem_number_str}.txt"
+    file = open(path,'r')
+    if split:
+        return file.read().split(sep = sep)
+    else:
+        return file.read()
