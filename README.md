@@ -15,12 +15,12 @@
 ```bash
 git clone https://github.com/perrindelort/Project-Euler
 ```
-2. Create a python environment :  
- Using requirements.txt :
+2. Create a python environment :
+ - Using requirements.txt
 ```bash
 conda create --file requirements.txt
 ```
-Using environment.yml :
+ - Using environment.yml
 ```bash
 conda env create -f environment.yml
 ```
