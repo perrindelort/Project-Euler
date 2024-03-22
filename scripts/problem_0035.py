@@ -8,7 +8,7 @@ Created on Fri Mar 22 20:41:29 2024
 import os
 
 from util.util import timing, format_number
-from util.funct import is_prime
+from util.funct import isprime
 from scripts.problem import Problem
 
 class Problem35(Problem):
@@ -23,11 +23,11 @@ class Problem35(Problem):
         self.detailed_answer = f"There are {format_number(self.answer)} circular primes below {format_number(kwargs['upper_bound'])}"
     
     def is_circular_prime(self,integer):
-        if is_prime(integer):
+        if isprime(integer):
             integer_string = str(integer)
             for i in range(len(integer_string)):
                 integer_string = integer_string[1:] + integer_string[0]
-                if is_prime(int(integer_string)) == False:
+                if isprime(int(integer_string)) == False:
                     return False
             return True
         return False        

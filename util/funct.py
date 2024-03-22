@@ -36,7 +36,7 @@ def fibonacci(n):
 #     return True
 # =============================================================================
 def is_prime(n):
-    return primes.check()
+    return primes.check(n)
 
 def is_prime_for_truncatable_prime(n):
     if n < 11:
@@ -58,6 +58,15 @@ def is_palindrome(string):
     if string == string[::-1]:
         return True
     return False
+
+def is_pan_digital(string):
+    if (len(string)!=9):
+        return False
+    for i in range(1,10):
+        if string.count(str(i))!=1:
+            return False
+    return True
+
 
 def load_data_from_txt(problem_number, split = True, sep =','):
     problem_number_str = str(problem_number).zfill(4)
