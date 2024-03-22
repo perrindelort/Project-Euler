@@ -8,6 +8,7 @@ Created on Wed Mar 20 23:59:59 2024
 from bs4 import BeautifulSoup
 import re
 import PIL.Image
+from pylatexenc.latex2text import LatexNodes2Text
 
 REPLACEMENTS = {'</p>' : '\n',
                 '$' : '',
@@ -25,7 +26,8 @@ REPLACEMENTS = {'</p>' : '\n',
                 r'\lt' : '<',
                 '&=' : '=',
                 '<br>' : '\n',
-                r'\le' : '≤'
+                r'\le' : '≤',
+                'amp;' : ''
                 }
 
 REGEX_SUB = {r'<span class="tooltiptext">.*?</span></strong>' : '',
@@ -43,31 +45,55 @@ REGEX_SUB = {r'<span class="tooltiptext">.*?</span></strong>' : '',
 # =============================================================================
 
 
-def html_to_string(html_code, problem_number):
-    soup = BeautifulSoup(html_code, 'html.parser')
-        
-    # Find the <img> tag
-    img_tag = soup.find('img')
+# =============================================================================
+# def html_to_string(html_code, problem_number):
+#     soup = BeautifulSoup(html_code, 'html.parser')
+#         
+#     # Find the <img> tag
+#     img_tag = soup.find('img')
+# 
+#     if img_tag:
+#         img_src = img_tag['src']
+#         
+#         problem_number_str = str(problem_number).zfill(4)
+#         ascii_img = png_to_ascii(f"././data/images/problem_{problem_number_str}.png")
+# 
+#         img_tag.replace_with(ascii_img)
+# 
+#     txt = soup.get_text() 
+# 
+#     # Remove HTML tags and perform other replacements as needed
+#     for old, new in REPLACEMENTS.items():
+#         txt = txt.replace(old, new)
+#         
+#     for pattern, replacement in REGEX_SUB.items():
+#         txt = re.sub(pattern, replacement, txt, flags=re.DOTALL)
+# 
+#     return txt
+# =============================================================================
 
+def html_to_string(html_code, problem_number):
+    html_code = LatexNodes2Text().latex_to_text(html_code)
+    soup = BeautifulSoup(html_code, 'html.parser')
+
+    img_tag = soup.find('img')
+    
     if img_tag:
         img_src = img_tag['src']
-        
+            
         problem_number_str = str(problem_number).zfill(4)
         ascii_img = png_to_ascii(f"././data/images/problem_{problem_number_str}.png")
-
+    
         img_tag.replace_with(ascii_img)
-
+    
     txt = soup.get_text() 
-
     # Remove HTML tags and perform other replacements as needed
     for old, new in REPLACEMENTS.items():
         txt = txt.replace(old, new)
-        
+           
     for pattern, replacement in REGEX_SUB.items():
         txt = re.sub(pattern, replacement, txt, flags=re.DOTALL)
-
     return txt
-
 
 def png_to_ascii(image_path, new_width = 90):
      
