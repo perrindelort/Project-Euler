@@ -7,9 +7,12 @@ Created on Thu Mar 21 00:07:48 2024
 import os
 import re
 from time import perf_counter_ns
-
 import functools
 import textwrap
+from termcolor import colored
+
+
+from util.const import N_DASHES
 
 def format_number(number):
     return format(number,',')
@@ -35,7 +38,7 @@ def get_problem_number_from_filename(path):
     return int(match.group(1))
 
 
-def format_statement_answer(problem_number, title, statement, time_taken, short_answer, detailed_answer, n_dashes=50):
+def format_statement_answer(problem_number, title, statement, time_taken, short_answer, detailed_answer, correct_answer, n_dashes = N_DASHES):
     os.system('cls')
 
     max_len = 2*n_dashes + 10 + problem_number//10 + 1
@@ -95,4 +98,5 @@ def format_statement_answer(problem_number, title, statement, time_taken, short_
     print(f"Time taken : {time_taken} seconds \n")
     print(f"Short Answer : {short_answer} \n")
     print(f"Detailed answer : {text_detailed_answer} \n")
+    print(f"Answer : {colored('Correct', 'green')} \n") if correct_answer == True else print(f"Answer : {colored('False', 'red')} \n")
     print("-" * max_len)

@@ -37,5 +37,5 @@ class Problem3(Problem):
 
 
 if __name__ == '__main__':
-    problem = Problem3(number_to_factor = 600851475143)
+    problem = Problem3(number_to_factor = 600_851_475_143)
     problem.print_problem()

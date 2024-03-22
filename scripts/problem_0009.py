@@ -19,9 +19,9 @@ class Problem9(Problem):
         
         self.answer, self.time_taken = self.solve(target = kwargs['target'])
         
-        self.detailed_answer = f"The value of the products a•b•c where (a,b,c) is the only pythagorean triplet s.t. a+b+c={format_number(kwargs['target'])} is {format_number(self.answer)}"
+        self.detailed_answer = f"The value of the products a•b•c where (a,b,c) is the only pythagorean triplet s.t. a+b+c={format_number(kwargs['target'])} is {format_number(self.answer[0])} with a = {format_number(self.answer[1])}, b = {format_number(self.answer[2])}, c = {format_number(self.answer[3])} "
             
-    
+        self.answer = self.answer[0]
     @timing
     def solve(self, target):
         for c in range(2,target):
@@ -29,10 +29,10 @@ class Problem9(Problem):
                 for a in range(b):
                     if (a**2+b**2==c**2):
                         if (a+b+c==target):
-                            print ("a : ",a)
-                            print("b : ",b)
-                            print("c : ",c)
-                            return (a*b*c)
+                            # print ("a : ",a)
+                            # print("b : ",b)
+                            # print("c : ",c)
+                            return (a*b*c, a, b, c)
                         
 
 
