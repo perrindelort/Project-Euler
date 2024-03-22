@@ -42,7 +42,10 @@ TITLE = {1 : 'Multiples of 3 or 5',
          
          32 : 'Pandigital Products',
          33 : 'Digit Cancelling Fractions',
-         34 : 'Digit Factorials'
+         34 : 'Digit Factorials',
+         35 : 'Circular Primes',
+         36 : 'Double-base Palindromes',
+         37 : 'Truncatable Primes'
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -216,7 +219,11 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           
           32 : {'upper_bound' : 9876},
           33 : {},
-          34 : {'upper_bound' : 9_999_999}}
+          34 : {'upper_bound' : 9_999_999},
+          35 : {'upper_bound' : 1_000_000},
+          36 : {'upper_bound' : 1_000_000},
+          37 : {}
+          }
           
 ANSWERS = {1 : 233168,
            2 : 4613732, 
@@ -251,5 +258,8 @@ ANSWERS = {1 : 233168,
            
            32 : 45228,
            33 : 100,
-           34 : 40_730
+           34 : 40_730,
+           35 : 55,
+           36 : 872187,
+           37 : 748317
 }

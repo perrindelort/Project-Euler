@@ -5,7 +5,10 @@ Created on Thu Mar 21 22:51:21 2024
 @author: Antoine
 """
 
+import math
 from functools import cache
+from primePy import primes
+from sympy import isprime
 
 @cache
 def factorial(n):
@@ -20,7 +23,42 @@ def fibonacci(n):
         return 0
     else:
         return fibonacci(n-1)+fibonacci(n-2)
-    
+
+# =============================================================================
+# def is_prime(n):
+#     if n==1:
+#         return False
+#     elif n==2:
+#         return True
+#     for i in range(2,math.ceil(math.sqrt(n))+1):
+#         if n%i==0:
+#             return False
+#     return True
+# =============================================================================
+def is_prime(n):
+    return primes.check()
+
+def is_prime_for_truncatable_prime(n):
+    if n < 11:
+        return False
+    else:
+        return primes.check(n)
+
+def is_truncatable_prime(integer):
+    integer_string = str(integer)
+    for i in range(1, len(integer_string)):
+        if not is_prime_for_truncatable_prime(int(integer_string[i:])):
+            return False
+    for i in range(1, len(integer_string)):
+        if not is_prime_for_truncatable_prime(int(integer_string[:-i])):
+            return False
+    return True
+
+def is_palindrome(string):
+    if string == string[::-1]:
+        return True
+    return False
+
 def load_data_from_txt(problem_number, split = True, sep =','):
     problem_number_str = str(problem_number).zfill(4)
     path = f"././data/data/problem_{problem_number_str}.txt"

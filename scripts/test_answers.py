@@ -42,7 +42,7 @@ def test_all(threshold = SOLVE_DURATION_THRESHOLD, n_dashes=N_DASHES):
     print(f" elapsed_time : 0 \t Passed : 0 \t Failed : 0 \t Remaining : {remaining}", end='')
 
     for problem_number, problem_answer in ANSWERS.items():
-
+        print(problem_number, problem_answer)
         problem_number_str = str(problem_number).zfill(4)
         module_name = f"scripts.problem_{problem_number_str}"
 
