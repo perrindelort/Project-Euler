@@ -67,6 +67,11 @@ def is_pan_digital(string):
             return False
     return True
 
+def is_pentagonal(integer):
+    if integer != 0:
+        n = math.ceil((integer*2/3)**0.5)
+        return 0.5*(n*(3*n-1)) == integer
+    return False
 
 def load_data_from_txt(problem_number, split = True, sep =','):
     problem_number_str = str(problem_number).zfill(4)
