@@ -50,7 +50,8 @@ TITLE = {1 : 'Multiples of 3 or 5',
          39 : 'Integer Right Triangles',
          40 : "Champernowne's Constan",
          41 : 'Pandigital Prime',
-         42 : 'Coded Triangle Numbers'
+         42 : 'Coded Triangle Numbers',
+         43 : 'Sub-string Divisibility'
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -232,7 +233,8 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           39 : {'max_perimeter' : 1_000},
           40 : {'upper_bound' : 1_000_000},
           41 : {},
-          42 : {}
+          42 : {},
+          43 : {}
           }
           
 ANSWERS = {1 : 233_168,
@@ -276,5 +278,6 @@ ANSWERS = {1 : 233_168,
            39 : 840,
            40 : 210,
            41 : 7_652_413,
-           42 : 162
+           42 : 162,
+           43 : 16_695_334_890
 }
