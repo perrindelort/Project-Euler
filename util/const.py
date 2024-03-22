@@ -7,6 +7,7 @@ Created on Fri Mar 22 19:32:07 2024
 import re
 
 N_DASHES = 50
+SOLVE_DURATION_THRESHOLD = 10
 
 TITLE = {1 : 'Multiples of 3 or 5',
          2 : 'Even Fibonacci Numbers',
@@ -39,7 +40,8 @@ TITLE = {1 : 'Multiples of 3 or 5',
          29 : 'Distinct Powers',
          30 : 'Digit Fifth Powers',
          
-         32 : 'Pandigital Products'
+         32 : 'Pandigital Products',
+         33 : 'Digit Cancelling Fractions'
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -244,5 +246,6 @@ ANSWERS = {1 : 233168,
            29 : 9183,
            30 : 443839,
            
-           32 : 45228
+           32 : 45228,
+           33 : 100
 }

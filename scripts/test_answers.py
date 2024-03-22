@@ -10,7 +10,7 @@ import importlib
 from termcolor import colored
 from time import perf_counter_ns
 
-from util.const import ANSWERS, KWARGS, N_DASHES
+from util.const import ANSWERS, KWARGS, N_DASHES, SOLVE_DURATION_THRESHOLD
 
 class TestProblems(unittest.TestCase):
     def test_problems(self):
@@ -29,7 +29,7 @@ class TestProblems(unittest.TestCase):
             # Comparer l'attribut answer à la réponse connue
             self.assertEqual(answer, ANSWERS[problem_number])
 
-def test_all(threshold = 10, n_dashes=N_DASHES):
+def test_all(threshold = SOLVE_DURATION_THRESHOLD, n_dashes=N_DASHES):
 
     failed = 0
     passed = 0
