@@ -35,8 +35,10 @@ List of all the things I need to do to improve this repo !
 ### Adding features
 - [ ] Adding sub-parser to change the parameters of the problems
 - [ ] Setting the size of cmd window to either a fix value or depending of what problem.print_problem() will print
-- [ ] Adding pictures to cmd (for example to print the picture in Problem 15's statement)
-- [ ] Adding an automatic tester for when I try to change an existing solution
+
+
+### Improve
+- [ ] Adding a function to generate a benchmark of my solutions (time_taken...)
 
 ### Fixing
 - [ ] Formatting of statement and detailed_message not good enough yet
@@ -45,4 +47,7 @@ List of all the things I need to do to improve this repo !
 ## Done ✓
 
 - [x] Structured the repo !
-- [x] added the first 10 problems !
+- [x] Added the first 10 problems !
+- [x] Adding pictures to cmd (for example to print the picture in Problem 15's statement)
+- [x] Created and moved consts to util.const
+- [x] Adding an automatic tester for when I try to change an existing solution
