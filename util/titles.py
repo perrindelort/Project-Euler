@@ -32,7 +32,8 @@ TITLE = {1 : 'Multiples of 3 or 5',
          25: '1000-digit Fibonacci Number',
          26 : 'Reciprocal Cycles',
          27 : 'Quadratic Primes',
-         28 : 'Number Spiral Diagonals'
+         28 : 'Number Spiral Diagonals',
+         29 : 'Distinct Powers'
          }
 
 def get_title(problem_number):
