@@ -52,7 +52,8 @@ TITLE = {1 : 'Multiples of 3 or 5',
          41 : 'Pandigital Prime',
          42 : 'Coded Triangle Numbers',
          43 : 'Sub-string Divisibility',
-         44 : 'Pentagon Numbers'
+         44 : 'Pentagon Numbers',
+         45 : 'Triangular, Pentagonal, and Hexagonal'
 }
 
 
@@ -101,6 +102,7 @@ ANSWERS = {1 : 233_168,
            42 : 162,
            43 : 16_695_334_890,
            44 : 5_482_660,
+           45 : 1_533_776_805
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -284,5 +286,6 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           41 : {},
           42 : {},
           43 : {},
-          44 : {}
+          44 : {},
+          45 : {}
           }

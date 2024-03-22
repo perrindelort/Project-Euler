@@ -73,6 +73,11 @@ def is_pentagonal(integer):
         return 0.5*(n*(3*n-1)) == integer
     return False
 
+def is_hexagonal(integer):
+    if integer != 0:
+        n = math.ceil((integer/2)**0.5)
+        return n*(2*n-1) == integer
+
 def load_data_from_txt(problem_number, split = True, sep =','):
     problem_number_str = str(problem_number).zfill(4)
     path = f"././data/data/problem_{problem_number_str}.txt"
