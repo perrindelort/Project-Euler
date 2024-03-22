@@ -30,7 +30,7 @@ class Problem45(Problem):
             triangle_number += n
             if is_pentagonal(triangle_number) and is_hexagonal(triangle_number):
                 stop = True
-        return triangle_number
+        return int(triangle_number)
 
 
 if __name__ == '__main__':

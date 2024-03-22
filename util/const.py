@@ -53,7 +53,8 @@ TITLE = {1 : 'Multiples of 3 or 5',
          42 : 'Coded Triangle Numbers',
          43 : 'Sub-string Divisibility',
          44 : 'Pentagon Numbers',
-         45 : 'Triangular, Pentagonal, and Hexagonal'
+         45 : 'Triangular, Pentagonal, and Hexagonal',
+         46 : "Goldbach's Other Conjecture"
 }
 
 
@@ -102,7 +103,8 @@ ANSWERS = {1 : 233_168,
            42 : 162,
            43 : 16_695_334_890,
            44 : 5_482_660,
-           45 : 1_533_776_805
+           45 : 1_533_776_805,
+           46 : 5_777
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -287,5 +289,6 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           42 : {},
           43 : {},
           44 : {},
-          45 : {}
+          45 : {},
+          46 : {'upper_bound' : 10_000}
           }
