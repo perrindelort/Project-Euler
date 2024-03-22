@@ -18,10 +18,11 @@ if __name__ == "__main__":
     if args.test_all == True:
         from scripts.test_answers import test_all
         test_all()
-
-    problem_number_str = str(args.problem_number).zfill(4)
-    script_name = f"scripts.problem_{problem_number_str}"
-
-    script = __import__(script_name)
-
-    runpy.run_module(script_name, run_name="__main__", alter_sys=True)
+        
+    else:
+        problem_number_str = str(args.problem_number).zfill(4)
+        script_name = f"scripts.problem_{problem_number_str}"
+    
+        script = __import__(script_name)
+    
+        runpy.run_module(script_name, run_name="__main__", alter_sys=True)

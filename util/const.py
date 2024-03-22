@@ -42,7 +42,7 @@ TITLE = {1 : 'Multiples of 3 or 5',
          32 : 'Pandigital Products'
 }
 
-KWARVS = {1 : {'upper_bound' : 1_000},
+KWARGS = {1 : {'upper_bound' : 1_000},
           2 : {'upper_bound' : 4_000_000},
           3 : {'number_to_factor' : 600_851_475_143},
           4 : {'upper_bound' : 1_000},

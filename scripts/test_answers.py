@@ -4,12 +4,13 @@ Created on Fri Mar 22 18:31:31 2024
 
 @author: Antoine
 """
-
+import os
 import unittest
 import importlib
 from termcolor import colored
+from time import perf_counter_ns
 
-from util.const import ANSWERS, KWARGS
+from util.const import ANSWERS, KWARGS, N_DASHES
 
 class TestProblems(unittest.TestCase):
     def test_problems(self):
@@ -28,28 +29,54 @@ class TestProblems(unittest.TestCase):
             # Comparer l'attribut answer à la réponse connue
             self.assertEqual(answer, ANSWERS[problem_number])
 
-def test_all(n_dashes = 50):
-    print('-' * n_dashes + " TESTING " + '-' * n_dashes)
-    for problem_number in ANSWERS.keys():
-        
+def test_all(threshold = 10, n_dashes=N_DASHES):
+
+    failed = 0
+    passed = 0
+    slow = 0
+    remaining = len(ANSWERS)
+    elapsed_time = 0.0
+    results = ""
+
+    # Print the header line for the last print statement
+    print(f" elapsed_time : 0 \t Passed : 0 \t Failed : 0 \t Remaining : {remaining}", end='')
+
+    for problem_number, problem_answer in ANSWERS.items():
+
         problem_number_str = str(problem_number).zfill(4)
         module_name = f"scripts.problem_{problem_number_str}"
-        
-        # script = __import__(script_name)
+
         module = importlib.import_module(module_name)
 
         class_name = f"Problem{problem_number}"
         problem_class = getattr(module, class_name)
-
+        
+        start_time = perf_counter_ns()
         problem_instance = problem_class(**KWARGS[problem_number])
         answer = problem_instance.answer
+        end_time = perf_counter_ns()
         
-        if str(answer) == str(ANSWERS[problem_number]):
-            print(colored(f"Problem {problem_number_str} : Passed",'green'))
+        duration = (end_time-start_time)*10**-9
+        elapsed_time += duration
+
+        if str(answer) == str(problem_answer):
+            passed += 1
+            if duration < threshold:
+                results += colored(f"Problem {problem_number_str} : Passed \n",'green')
+            else:
+                slow += 1
+                results += colored(f"Problem {problem_number_str} : Passed {duration} s \n",'yellow')
         else:
-            print(colored(f"Problem {problem_number_str} : Failed",'red'))
+            failed += 1
+            results += colored(f"Problem {problem_number_str} : Failed \n",'red')
+
+        remaining -= 1
+        os.system('cls')
+        print(results)
+        print()  # Print an empty line
+        print(f"\r elapsed_time : {elapsed_time} s \t Passed : {passed} \t Failed : {failed} \t Slow : {slow} \t Remaining : {remaining}", end='')
+
             
-    print('-' * (2*n_dashes + 9))
 
 if __name__ == '__main__':
     TestProblems()
