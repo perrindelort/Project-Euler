@@ -6,6 +6,7 @@ Created on Thu Mar 21 22:51:21 2024
 """
 
 import math
+from collections import Counter
 from functools import cache
 from primePy import primes
 from sympy import isprime
@@ -57,6 +58,11 @@ def is_truncatable_prime(integer):
 def is_palindrome(string):
     if string == string[::-1]:
         return True
+    return False
+
+def is_permutation(string1,string2):
+    if (len(string1)) == len(string2):
+        return Counter(string1) == Counter(string2)
     return False
 
 def is_pan_digital(string):

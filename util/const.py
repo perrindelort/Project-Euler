@@ -56,7 +56,9 @@ TITLE = {1 : 'Multiples of 3 or 5',
          45 : 'Triangular, Pentagonal, and Hexagonal',
          46 : "Goldbach's Other Conjecture",
          47 : 'Distinct Primes Factors',
-         48 : 'Self Powers'
+         48 : 'Self Powers',
+         49 : 'Prime Permutations',
+         50 : 'Consecutive Prime Sum'
 }
 
 
@@ -108,7 +110,9 @@ ANSWERS = {1 : 233_168,
            45 : 1_533_776_805,
            46 : 5_777,
            47 : 134_043,
-           48 : 9_110_846_700
+           48 : 9_110_846_700,
+           49 : 296_962_999_629,
+           50 : 997_651
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -295,6 +299,8 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           44 : {},
           45 : {},
           46 : {'upper_bound' : 10_000},
-          47 : {},
-          48 : {'upper_bound' : 1_000}
+          47 : {'upper_bound' : 1_000_000},
+          48 : {'upper_bound' : 1_000},
+          49 : {},
+          50 : {'upper_bound' : 1_000_000}
           }
