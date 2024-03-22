@@ -54,7 +54,8 @@ TITLE = {1 : 'Multiples of 3 or 5',
          43 : 'Sub-string Divisibility',
          44 : 'Pentagon Numbers',
          45 : 'Triangular, Pentagonal, and Hexagonal',
-         46 : "Goldbach's Other Conjecture"
+         46 : "Goldbach's Other Conjecture",
+         47 : 'Distinct Primes Factors'
 }
 
 
@@ -104,7 +105,8 @@ ANSWERS = {1 : 233_168,
            43 : 16_695_334_890,
            44 : 5_482_660,
            45 : 1_533_776_805,
-           46 : 5_777
+           46 : 5_777,
+           47 : 134043
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -290,5 +292,6 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           43 : {},
           44 : {},
           45 : {},
-          46 : {'upper_bound' : 10_000}
+          46 : {'upper_bound' : 10_000},
+          47 : {}
           }
