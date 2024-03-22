@@ -47,7 +47,8 @@ TITLE = {1 : 'Multiples of 3 or 5',
          36 : 'Double-base Palindromes',
          37 : 'Truncatable Primes',
          38 : 'Pandigital Multiples',
-         39 : 'Integer Right Triangles'
+         39 : 'Integer Right Triangles',
+         40 : "Champernowne's Constan"
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -226,7 +227,8 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           36 : {'upper_bound' : 1_000_000},
           37 : {},
           38 : {},
-          39 : {'max_perimeter' : 1_000}
+          39 : {'max_perimeter' : 1_000},
+          40 : {'upper_bound' : 1_000_000}
           }
           
 ANSWERS = {1 : 233_168,
@@ -267,5 +269,6 @@ ANSWERS = {1 : 233_168,
            36 : 872_187,
            37 : 748_317,
            38 : 932_718_654,
-           39 : 840
+           39 : 840,
+           40 : 210
 }
