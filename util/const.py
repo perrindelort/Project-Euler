@@ -41,7 +41,8 @@ TITLE = {1 : 'Multiples of 3 or 5',
          30 : 'Digit Fifth Powers',
          
          32 : 'Pandigital Products',
-         33 : 'Digit Cancelling Fractions'
+         33 : 'Digit Cancelling Fractions',
+         34 : 'Digit Factorials'
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -213,7 +214,9 @@ KWARGS = {1 : {'upper_bound' : 1_000},
                 'upper_bound_b' : 100},
           30 : {},
           
-          32 : {'upper_bound' : 9876}}
+          32 : {'upper_bound' : 9876},
+          33 : {},
+          34 : {'upper_bound' : 9_999_999}}
           
 ANSWERS = {1 : 233168,
            2 : 4613732, 
@@ -247,5 +250,6 @@ ANSWERS = {1 : 233168,
            30 : 443839,
            
            32 : 45228,
-           33 : 100
+           33 : 100,
+           34 : 40_730
 }
