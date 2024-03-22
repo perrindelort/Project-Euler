@@ -34,7 +34,9 @@ TITLE = {1 : 'Multiples of 3 or 5',
          27 : 'Quadratic Primes',
          28 : 'Number Spiral Diagonals',
          29 : 'Distinct Powers',
-         30 : 'Digit Fifth Powers'
+         30 : 'Digit Fifth Powers',
+         
+         32 : 'Pandigital Products'
          }
 
 def get_title(problem_number):
