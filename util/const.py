@@ -48,7 +48,9 @@ TITLE = {1 : 'Multiples of 3 or 5',
          37 : 'Truncatable Primes',
          38 : 'Pandigital Multiples',
          39 : 'Integer Right Triangles',
-         40 : "Champernowne's Constan"
+         40 : "Champernowne's Constan",
+         41 : 'Pandigital Prime',
+         42 : 'Coded Triangle Numbers'
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -228,7 +230,9 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           37 : {},
           38 : {},
           39 : {'max_perimeter' : 1_000},
-          40 : {'upper_bound' : 1_000_000}
+          40 : {'upper_bound' : 1_000_000},
+          41 : {},
+          42 : {}
           }
           
 ANSWERS = {1 : 233_168,
@@ -270,5 +274,7 @@ ANSWERS = {1 : 233_168,
            37 : 748_317,
            38 : 932_718_654,
            39 : 840,
-           40 : 210
+           40 : 210,
+           41 : 7_652_413,
+           42 : 162
 }
