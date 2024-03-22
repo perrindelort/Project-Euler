@@ -12,6 +12,9 @@ List of all the things I need to do to improve this repo !
 ### Because the solution is not generalizable
 - [ ] Problem 11
 
+### Because I don't even know what the function does anymore
+- [ ] Problem 30
+
 ## Repo modifications
 ### Growing the repository
 - [ ] Adding and formatting the ~100 problems I've solved !
