@@ -70,7 +70,8 @@ TITLE = {1 : 'Multiples of 3 or 5',
          59 : 'XOR Decryption',
          60 : 'Prime Pair Sets',
          61 : 'Cyclical Figurate Numbers',
-         62 : 'Cubic Permutations'
+         62 : 'Cubic Permutations',
+         63 : 'Powerful Digit Counts'
 }
 
 
@@ -136,7 +137,8 @@ ANSWERS = {1 : 233_168,
            59 : 129_448,
            60 : 26_033,
            61 : 28_684,
-           62 : 127035954683
+           62 : 127_035_954_683,
+           63 : 49
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -339,5 +341,6 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           59 : {},
           60 : {},
           61 : {},
-          62 : {'number_of_permutations' : 5}
+          62 : {'number_of_permutations' : 5},
+          63 : {}
           }
