@@ -37,9 +37,11 @@ class Problem52(Problem):
     @timing
     def solve(self, **kwargs):
         # No particular optimisation needed
-        for number in range(1,100000000):
+        number = 1
+        while True:
             if is_solution(number):
                 return number
+            number += 1
 
 
 if __name__ == '__main__':
