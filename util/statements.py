@@ -28,8 +28,14 @@ REPLACEMENTS = {'</p>' : '\n',
                 '<br>' : '\n',
                 r'\le' : '≤',
                 'amp;' : '',
-                '=' : ' = '
+                '=' : ' = ',
                 }
+
+LATEX_REPLACEMENT = {r'\lt' : '<',
+                     r'\le' : '≤',
+                     r'\dfrac' : '/',
+                     r'\ne' : '≠'}
+REGEX_LATEX = {r"\\dfrac\s*(\w+)\s*(\w+)" : r"\1/\2"}
 
 REGEX_SUB = {r'<span class="tooltiptext">.*?</span></strong>' : '',
              r'\{(\d+)\}': r'\1'}
@@ -74,6 +80,12 @@ REGEX_SUB = {r'<span class="tooltiptext">.*?</span></strong>' : '',
 # =============================================================================
 
 def html_to_string(html_code, problem_number):
+    for old, new in LATEX_REPLACEMENT.items():
+        html_code = html_code.replace(old, new)
+        
+    for pattern, replacement in REGEX_LATEX.items():
+        html_code = re.sub(pattern, replacement, html_code)
+        
     html_code = LatexNodes2Text().latex_to_text(html_code)
     soup = BeautifulSoup(html_code, 'html.parser')
 
