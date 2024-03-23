@@ -67,7 +67,8 @@ TITLE = {1 : 'Multiples of 3 or 5',
          56 : 'Powerful Digit Sum',
          57 : 'Square Root Convergents',
          58 : 'Spiral Primes',
-         59 : 'XOR Decryption'
+         59 : 'XOR Decryption',
+         60 : 'Prime Pair Sets'
 }
 
 
@@ -130,7 +131,8 @@ ANSWERS = {1 : 233_168,
            56: 972,
            57 : 153,
            58 : 26_241,
-           59 : 129_448
+           59 : 129_448,
+           60 : 26_033
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -330,5 +332,6 @@ KWARGS = {1 : {'upper_bound' : 1_000},
                 'upper_bound_b' : 100},
           57 : {'upper_bound' : 1_000},
           58 : {'target' : 10},
-          59 : {}
+          59 : {},
+          60 : {}
           }
