@@ -58,7 +58,9 @@ TITLE = {1 : 'Multiples of 3 or 5',
          47 : 'Distinct Primes Factors',
          48 : 'Self Powers',
          49 : 'Prime Permutations',
-         50 : 'Consecutive Prime Sum'
+         50 : 'Consecutive Prime Sum',
+         
+         52 : 'Permuted Multiples'
 }
 
 
@@ -112,7 +114,9 @@ ANSWERS = {1 : 233_168,
            47 : 134_043,
            48 : 9_110_846_700,
            49 : 296_962_999_629,
-           50 : 997_651
+           50 : 997_651,
+           
+           52 : 142_857,
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -302,5 +306,7 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           47 : {'upper_bound' : 1_000_000},
           48 : {'upper_bound' : 1_000},
           49 : {},
-          50 : {'upper_bound' : 1_000_000}
+          50 : {'upper_bound' : 1_000_000},
+          
+          52 : {}
           }
