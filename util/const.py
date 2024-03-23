@@ -77,7 +77,8 @@ TITLE = {1 : 'Multiples of 3 or 5',
          
          67 : 'Maximum Path Sum II',
          
-         69 : 'Totient Maximum'
+         69 : 'Totient Maximum',
+         70 : 'Totient Permutation'
 }
 
 
@@ -150,7 +151,8 @@ ANSWERS = {1 : 233_168,
            
            67 : 7_273,
            
-           69 : 510_510
+           69 : 510_510,
+           70 : 8_319_823
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -360,5 +362,6 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           
           67 : {},
           
-          69 : {'upper_bound' : 1_000_000}
+          69 : {'upper_bound' : 1_000_000},
+          70 : {'upper_bound' : 10_000_000}
           }
