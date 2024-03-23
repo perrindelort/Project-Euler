@@ -63,7 +63,8 @@ TITLE = {1 : 'Multiples of 3 or 5',
          52 : 'Permuted Multiples',
          53 : 'Combinatoric Selections',
          
-         55 :'Lychrel Numbers'
+         55 : 'Lychrel Numbers',
+         56 : 'Powerful Digit Sum'
 }
 
 
@@ -122,7 +123,8 @@ ANSWERS = {1 : 233_168,
            52 : 142_857,
            53 : 4_075,
            
-           55 : 249
+           55 : 249,
+           56: 972
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -316,5 +318,7 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           
           52 : {},
           53 : {'upper_bound' : 1_000_000},
-          55 : {'upper_bound' : 10_000}
+          55 : {'upper_bound' : 10_000},
+          56 : {'upper_bound_a' : 100,
+                'upper_bound_b' : 100}
           }
