@@ -71,7 +71,9 @@ TITLE = {1 : 'Multiples of 3 or 5',
          60 : 'Prime Pair Sets',
          61 : 'Cyclical Figurate Numbers',
          62 : 'Cubic Permutations',
-         63 : 'Powerful Digit Counts'
+         63 : 'Powerful Digit Counts',
+         
+         65 : 'Convergents of e'
 }
 
 
@@ -138,7 +140,9 @@ ANSWERS = {1 : 233_168,
            60 : 26_033,
            61 : 28_684,
            62 : 127_035_954_683,
-           63 : 49
+           63 : 49,
+           
+           65 : 272
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -342,5 +346,7 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           60 : {},
           61 : {},
           62 : {'number_of_permutations' : 5},
-          63 : {}
+          63 : {},
+          
+          65 : {'term_number' : 100}
           }
