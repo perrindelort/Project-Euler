@@ -64,7 +64,8 @@ TITLE = {1 : 'Multiples of 3 or 5',
          53 : 'Combinatoric Selections',
          
          55 : 'Lychrel Numbers',
-         56 : 'Powerful Digit Sum'
+         56 : 'Powerful Digit Sum',
+         57 : 'Square Root Convergents'
 }
 
 
@@ -124,7 +125,8 @@ ANSWERS = {1 : 233_168,
            53 : 4_075,
            
            55 : 249,
-           56: 972
+           56: 972,
+           57 : 153
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -317,8 +319,10 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           50 : {'upper_bound' : 1_000_000},
           
           52 : {},
-          53 : {'upper_bound' : 1_000_000},
+          53 : {'upper_bound' : 100,
+                'lower_bound' : 1_000_000},
           55 : {'upper_bound' : 10_000},
           56 : {'upper_bound_a' : 100,
-                'upper_bound_b' : 100}
+                'upper_bound_b' : 100},
+          57 : {'upper_bound' : 1_000}
           }
