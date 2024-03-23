@@ -68,7 +68,8 @@ TITLE = {1 : 'Multiples of 3 or 5',
          57 : 'Square Root Convergents',
          58 : 'Spiral Primes',
          59 : 'XOR Decryption',
-         60 : 'Prime Pair Sets'
+         60 : 'Prime Pair Sets',
+         61 : 'Cyclical Figurate Numbers'
 }
 
 
@@ -132,7 +133,8 @@ ANSWERS = {1 : 233_168,
            57 : 153,
            58 : 26_241,
            59 : 129_448,
-           60 : 26_033
+           60 : 26_033,
+           61 : 28_684
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -333,5 +335,6 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           57 : {'upper_bound' : 1_000},
           58 : {'target' : 10},
           59 : {},
-          60 : {}
+          60 : {},
+          61 : {}
           }
