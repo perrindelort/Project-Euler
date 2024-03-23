@@ -61,7 +61,9 @@ TITLE = {1 : 'Multiples of 3 or 5',
          50 : 'Consecutive Prime Sum',
          
          52 : 'Permuted Multiples',
-         53 : 'Combinatoric Selections'
+         53 : 'Combinatoric Selections',
+         
+         55 :'Lychrel Numbers'
 }
 
 
@@ -118,7 +120,9 @@ ANSWERS = {1 : 233_168,
            50 : 997_651,
            
            52 : 142_857,
-           53 : 4_075
+           53 : 4_075,
+           
+           55 : 249
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -311,5 +315,6 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           50 : {'upper_bound' : 1_000_000},
           
           52 : {},
-          53 : {'upper_bound' : 1_000_000}
+          53 : {'upper_bound' : 1_000_000},
+          55 : {'upper_bound' : 10_000}
           }
