@@ -28,7 +28,7 @@ class Problem70(Problem):
         
         self.answer, self.time_taken = self.solve(upper_bound = kwargs['upper_bound'])
         
-        self.detailed_answer = f"The value of n, 1 < n < 10^7 for which phi(n) is a permutation of n and the ratio n/phi(n) produces a minimum is n = {format_number(self.answer[0])} for which n/phi(n) = {format_number(self.answer[1])}"
+        self.detailed_answer = f"The value of n, 1 < n < 10^7 for which phi(n) is a permutation of n and the ratio n/phi(n) produces a minimum is n = {format_number(self.answer[1])} for which n/phi(n) = {format_number(self.answer[0])}"
         
         # We returned 2 values for the detailed_answer
         self.answer = self.answer[0]
@@ -46,7 +46,7 @@ class Problem70(Problem):
                 if counter_phi_n == counter_n:
                     best_value = n/phi_n
                     best_n = n
-        return best_value, best_n
+        return best_n, best_value,
 
 
 if __name__ == '__main__':
