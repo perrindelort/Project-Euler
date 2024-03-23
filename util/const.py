@@ -79,7 +79,8 @@ TITLE = {1 : 'Multiples of 3 or 5',
          
          69 : 'Totient Maximum',
          70 : 'Totient Permutation',
-         71 : 'Ordered Fractions'
+         71 : 'Ordered Fractions',
+         72 : 'Counting Fractions'
 }
 
 
@@ -154,7 +155,8 @@ ANSWERS = {1 : 233_168,
            
            69 : 510_510,
            70 : 8_319_823, 
-           71 : 428_570
+           71 : 428_570,
+           72 : 303_963_552_391
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -366,5 +368,6 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           
           69 : {'upper_bound' : 1_000_000},
           70 : {'upper_bound' : 10_000_000},
-          71 : {'upper_bound' : 1_000_000}
+          71 : {'upper_bound' : 1_000_000},
+          72 : {'upper_bound' : 1_000_000}
           }
