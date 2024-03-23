@@ -73,7 +73,9 @@ TITLE = {1 : 'Multiples of 3 or 5',
          62 : 'Cubic Permutations',
          63 : 'Powerful Digit Counts',
          
-         65 : 'Convergents of e'
+         65 : 'Convergents of e',
+         
+         67 : 'Maximum Path Sum II'
 }
 
 
@@ -142,7 +144,9 @@ ANSWERS = {1 : 233_168,
            62 : 127_035_954_683,
            63 : 49,
            
-           65 : 272
+           65 : 272,
+           
+           67 : 7_273
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -348,5 +352,7 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           62 : {'number_of_permutations' : 5},
           63 : {},
           
-          65 : {'term_number' : 100}
+          65 : {'term_number' : 100},
+          
+          67 : {}
           }
