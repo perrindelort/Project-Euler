@@ -75,7 +75,9 @@ TITLE = {1 : 'Multiples of 3 or 5',
          
          65 : 'Convergents of e',
          
-         67 : 'Maximum Path Sum II'
+         67 : 'Maximum Path Sum II',
+         
+         69 : 'Totient Maximum'
 }
 
 
@@ -146,7 +148,9 @@ ANSWERS = {1 : 233_168,
            
            65 : 272,
            
-           67 : 7_273
+           67 : 7_273,
+           
+           69 : 510_510
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -354,5 +358,7 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           
           65 : {'term_number' : 100},
           
-          67 : {}
+          67 : {},
+          
+          69 : {'upper_bound' : 1_000_000}
           }
