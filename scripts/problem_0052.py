@@ -36,6 +36,7 @@ class Problem52(Problem):
     
     @timing
     def solve(self, **kwargs):
+        # No particular optimisation needed
         for number in range(1,100000000):
             if is_solution(number):
                 return number
