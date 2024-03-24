@@ -9,6 +9,7 @@ import unittest
 import importlib
 from termcolor import colored
 from time import perf_counter_ns
+import traceback
 
 from util.const import ANSWERS, KWARGS, N_DASHES, SOLVE_DURATION_THRESHOLD
 
@@ -31,6 +32,7 @@ class TestProblems(unittest.TestCase):
 
 def test_all(threshold = SOLVE_DURATION_THRESHOLD, n_dashes=N_DASHES):
 
+    crashed = 0
     failed = 0
     passed = 0
     slow = 0
@@ -43,36 +45,42 @@ def test_all(threshold = SOLVE_DURATION_THRESHOLD, n_dashes=N_DASHES):
 
     for problem_number, problem_answer in ANSWERS.items():
         problem_number_str = str(problem_number).zfill(4)
-        module_name = f"scripts.problem_{problem_number_str}"
-
-        module = importlib.import_module(module_name)
-
-        class_name = f"Problem{problem_number}"
-        problem_class = getattr(module, class_name)
         
-        start_time = perf_counter_ns()
-        problem_instance = problem_class(**KWARGS[problem_number])
-        end_time = perf_counter_ns()
-        
-        duration = (end_time-start_time)*10**-9
-        elapsed_time += duration
-
-        if problem_instance.assert_answer():
-            passed += 1
-            if duration < threshold:
-                results += colored(f"Problem {problem_number_str} : Passed \n",'green')
+        try:
+            module_name = f"scripts.problem_{problem_number_str}"
+    
+            module = importlib.import_module(module_name)
+    
+            class_name = f"Problem{problem_number}"
+            problem_class = getattr(module, class_name)
+            
+            start_time = perf_counter_ns()
+            problem_instance = problem_class(**KWARGS[problem_number])
+            end_time = perf_counter_ns()
+            
+            duration = (end_time-start_time)*10**-9
+            elapsed_time += duration
+    
+            if problem_instance.assert_answer():
+                passed += 1
+                if duration < threshold:
+                    results += colored(f"Problem {problem_number_str} : Passed \n",'green')
+                else:
+                    slow += 1
+                    results += colored(f"Problem {problem_number_str} : Passed {duration} s \n",'yellow')
             else:
-                slow += 1
-                results += colored(f"Problem {problem_number_str} : Passed {duration} s \n",'yellow')
-        else:
-            failed += 1
-            results += colored(f"Problem {problem_number_str} : Failed \n",'red')
-
+                failed += 1
+                results += colored(f"Problem {problem_number_str} : Failed \n",'red')
+                
+        except Exception as e:
+            crashed += 1
+            tb_str = traceback.format_exc()  # Capture the traceback as a string
+            results += colored(f"Problem {problem_number_str} : Crashed {type(e).__name__}\n{tb_str}\n", 'blue')
         remaining -= 1
         os.system('cls')
         print(results)
         print()  # Print an empty line
-        print(f"\r elapsed_time : {elapsed_time} s \t Passed : {passed} \t Failed : {failed} \t Slow : {slow} \t Remaining : {remaining}", end='')
+        print(f"\rTotal Time Taken : {elapsed_time:.4f} s \t Passed : {passed} \t Failed : {failed} \t Slow : {slow} \t Crashed : {crashed} \t Remaining : {remaining}", end='')
 
             
 
