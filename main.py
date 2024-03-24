@@ -8,16 +8,21 @@ import runpy
 import warnings
 
 from util.arg_parser import ProjectEulerArgumentParser
+from util.color_checker import display_colors
 
 if __name__ == "__main__":
     warnings.filterwarnings("ignore", category=RuntimeWarning)
     
     parser = ProjectEulerArgumentParser()
     args = parser.parse_args()
+    print(args)
 
     if args.test_all == True:
         from scripts.test_answers import test_all
         test_all()
+        
+    if args.color_checker:
+        display_colors(args.color_checker)
         
     else:
         problem_number_str = str(args.problem_number).zfill(4)
