@@ -95,7 +95,12 @@ TITLE = {1 : 'Multiples of 3 or 5',
          84 : 'Monopoly Odds',
          
          
-         87 : 'Prime Power Triples'
+         87 : 'Prime Power Triples',
+         
+         
+         
+         
+         92 : 'Square Digit Chains'
 }
 
 
@@ -186,7 +191,12 @@ ANSWERS = {1 : 233_168,
            84 : 101_524,
            
            
-           87 : 1_097_343
+           87 : 1_097_343,
+           
+           
+           
+           
+           92 : 8_581_146
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -417,5 +427,10 @@ KWARGS = {1 : {'upper_bound' : 1_000},
                 'upper_bound_b' : 4},
           
           
-          87 : {'upper_bound' : 50_000_000}
+          87 : {'upper_bound' : 50_000_000},
+          
+          
+          
+          
+          92 : {'upper_bound' : 10_000_000}
           }
