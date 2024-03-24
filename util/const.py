@@ -105,7 +105,12 @@ TITLE = {1 : 'Multiples of 3 or 5',
          
          95 : 'Amicable Chains',
          
-         97 : 'Large Non-Mersenne Prime'
+         97 : 'Large Non-Mersenne Prime',
+         
+         
+         
+         
+         102 : 'Triangle Containment'
 }
 
 
@@ -206,7 +211,12 @@ ANSWERS = {1 : 233_168,
            
            95 : 14_316,
            
-           97 : 8_739_992_577
+           97 : 8_739_992_577,
+           
+           
+           
+           
+           102 : 228
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -450,5 +460,10 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           97 : {'factor' : 28_433, 
                 'base' : 2,
                 'exponent' : 7_830_457,
-                'target' : 10}
+                'target' : 10},
+          
+          
+          
+          
+          102 : {}
           }
