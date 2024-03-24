@@ -81,7 +81,8 @@ TITLE = {1 : 'Multiples of 3 or 5',
          70 : 'Totient Permutation',
          71 : 'Ordered Fractions',
          72 : 'Counting Fractions',
-         73 : 'Counting Fractions in a Range'
+         73 : 'Counting Fractions in a Range',
+         74 : 'Digit Factorial Chains'
 }
 
 
@@ -158,7 +159,8 @@ ANSWERS = {1 : 233_168,
            70 : 8_319_823, 
            71 : 428_570,
            72 : 303_963_552_391,
-           73 : 7_295_372
+           73 : 7_295_372,
+           74 : 402
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -372,5 +374,7 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           70 : {'upper_bound' : 10_000_000},
           71 : {'upper_bound' : 1_000_000},
           72 : {'upper_bound' : 1_000_000},
-          73 : {'upper_bound' : 12_000}
+          73 : {'upper_bound' : 12_000},
+          74 : {'upper_bound' : 1_000_000,
+                'target' : 60}
           }
