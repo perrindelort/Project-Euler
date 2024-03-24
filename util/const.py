@@ -103,7 +103,9 @@ TITLE = {1 : 'Multiples of 3 or 5',
          92 : 'Square Digit Chains',
          
          
-         95 : 'Amicable Chains'
+         95 : 'Amicable Chains',
+         
+         97 : 'Large Non-Mersenne Prime'
 }
 
 
@@ -202,7 +204,9 @@ ANSWERS = {1 : 233_168,
            92 : 8_581_146,
            
            
-           95 : 14_316
+           95 : 14_316,
+           
+           97 : 8_739_992_577
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -441,5 +445,10 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           92 : {'upper_bound' : 10_000_000},
           
           
-          95 : {'upper_bound' : 1_000_000}
+          95 : {'upper_bound' : 1_000_000},
+          
+          97 : {'factor' : 28_433, 
+                'base' : 2,
+                'exponent' : 7_830_457,
+                'target' : 10}
           }
