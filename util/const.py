@@ -91,7 +91,8 @@ TITLE = {1 : 'Multiples of 3 or 5',
          80 : 'Square Root Digital Expansion',
          81 : 'Path Sum: Two Ways',
          82 : 'Path Sum: Three Ways',
-         83 : 'Path Sum: Four Ways'
+         83 : 'Path Sum: Four Ways',
+         84 : 'Monopoly Odds'
 }
 
 
@@ -178,7 +179,8 @@ ANSWERS = {1 : 233_168,
            80 : 40_886,
            81 : 427_337,
            82 : 260_324,
-           83 : 425_185
+           83 : 425_185,
+           84 : 101_524,
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -403,5 +405,8 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           80 : {'upper_bound' : 100},
           81 : {},
           82 : {},
-          83 : {}
+          83 : {},
+          84 : {'upper_bound' : 1_000_000,
+                'upper_bound_a' : 4,
+                'upper_bound_b' : 4}
           }
