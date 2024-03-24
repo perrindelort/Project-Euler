@@ -82,7 +82,12 @@ TITLE = {1 : 'Multiples of 3 or 5',
          71 : 'Ordered Fractions',
          72 : 'Counting Fractions',
          73 : 'Counting Fractions in a Range',
-         74 : 'Digit Factorial Chains'
+         74 : 'Digit Factorial Chains',
+         75 : 'Singular Integer Right Triangles',
+         
+         
+         
+         79 : 'Passcode Derivation'
 }
 
 
@@ -160,7 +165,12 @@ ANSWERS = {1 : 233_168,
            71 : 428_570,
            72 : 303_963_552_391,
            73 : 7_295_372,
-           74 : 402
+           74 : 402,
+           75 : 161_667,
+           
+           
+           
+           79 : 73_162_890
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -376,5 +386,10 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           72 : {'upper_bound' : 1_000_000},
           73 : {'upper_bound' : 12_000},
           74 : {'upper_bound' : 1_000_000,
-                'target' : 60}
+                'target' : 60},
+          75 : {'upper_bound' : 1_500_000},
+          
+          
+          
+          79 : {}
           }
