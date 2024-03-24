@@ -92,7 +92,10 @@ TITLE = {1 : 'Multiples of 3 or 5',
          81 : 'Path Sum: Two Ways',
          82 : 'Path Sum: Three Ways',
          83 : 'Path Sum: Four Ways',
-         84 : 'Monopoly Odds'
+         84 : 'Monopoly Odds',
+         
+         
+         87 : 'Prime Power Triples'
 }
 
 
@@ -181,6 +184,9 @@ ANSWERS = {1 : 233_168,
            82 : 260_324,
            83 : 425_185,
            84 : 101_524,
+           
+           
+           87 : 1_097_343
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -408,5 +414,8 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           83 : {},
           84 : {'upper_bound' : 1_000_000,
                 'upper_bound_a' : 4,
-                'upper_bound_b' : 4}
+                'upper_bound_b' : 4},
+          
+          
+          87 : {'upper_bound' : 50_000_000}
           }
