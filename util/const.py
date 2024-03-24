@@ -100,7 +100,10 @@ TITLE = {1 : 'Multiples of 3 or 5',
          
          
          
-         92 : 'Square Digit Chains'
+         92 : 'Square Digit Chains',
+         
+         
+         95 : 'Amicable Chains'
 }
 
 
@@ -196,7 +199,10 @@ ANSWERS = {1 : 233_168,
            
            
            
-           92 : 8_581_146
+           92 : 8_581_146,
+           
+           
+           95 : 14_316
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -432,5 +438,8 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           
           
           
-          92 : {'upper_bound' : 10_000_000}
+          92 : {'upper_bound' : 10_000_000},
+          
+          
+          95 : {'upper_bound' : 1_000_000}
           }
