@@ -10,6 +10,7 @@ from collections import Counter
 from functools import cache
 from primePy import primes
 from sympy import isprime
+import numpy as np
 
 @cache
 def factorial(n):
@@ -84,9 +85,11 @@ def is_hexagonal(integer):
         n = math.ceil((integer/2)**0.5)
         return n*(2*n-1) == integer
 
-def load_data_from_txt(problem_number, split = True, sep =','):
+def load_data_from_txt(problem_number, split = True, sep =',', use_numpy = False):
     problem_number_str = str(problem_number).zfill(4)
     path = f"././data/data/problem_{problem_number_str}.txt"
+    if use_numpy:
+        return np.loadtxt(path, delimiter = sep)
     file = open(path,'r')
     if split:
         return file.read().split(sep = sep)
