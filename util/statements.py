@@ -33,9 +33,11 @@ REPLACEMENTS = {'</p>' : '\n',
 
 LATEX_REPLACEMENT = {r'\lt' : '<',
                      r'\le' : '≤',
-                     r'\dfrac' : '/',
                      r'\ne' : '≠'}
-REGEX_LATEX = {r"\\dfrac\s*(\w+)\s*(\w+)" : r"\1/\2"}
+
+REGEX_LATEX = {r"\\dfrac\s*(\w+)\s*(\w+)" : r"\1/\2",
+               r"\\dfrac\s*(\w)\s*(\w)" :  r"\1/\2",
+               r"\\dfrac\s*(\d)\s*(\d)" :  r"\1/\2"}
 
 REGEX_SUB = {r'<span class="tooltiptext">.*?</span></strong>' : '',
              r'\{(\d+)\}': r'\1'}

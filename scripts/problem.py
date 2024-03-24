@@ -24,7 +24,7 @@ class Problem():
         pass
     
     def assert_answer(self):
-        return self.answer == self.true_answer
+        return str(self.answer) == str(self.true_answer)
     
     def print_problem(self):
         format_statement_answer(problem_number = self.problem_number,

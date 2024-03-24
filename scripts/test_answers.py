@@ -52,13 +52,12 @@ def test_all(threshold = SOLVE_DURATION_THRESHOLD, n_dashes=N_DASHES):
         
         start_time = perf_counter_ns()
         problem_instance = problem_class(**KWARGS[problem_number])
-        answer = problem_instance.answer
         end_time = perf_counter_ns()
         
         duration = (end_time-start_time)*10**-9
         elapsed_time += duration
 
-        if str(answer) == str(problem_answer):
+        if problem_instance.assert_answer():
             passed += 1
             if duration < threshold:
                 results += colored(f"Problem {problem_number_str} : Passed \n",'green')
