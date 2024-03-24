@@ -89,7 +89,8 @@ TITLE = {1 : 'Multiples of 3 or 5',
          
          79 : 'Passcode Derivation',
          80 : 'Square Root Digital Expansion',
-         81 : 'Path Sum: Two Ways'
+         81 : 'Path Sum: Two Ways',
+         82 : 'Path Sum: Three Ways'
 }
 
 
@@ -174,7 +175,8 @@ ANSWERS = {1 : 233_168,
            
            79 : 73_162_890,
            80 : 40_886,
-           81 : 427_337
+           81 : 427_337,
+           82 : 260_324
 }
 
 KWARGS = {1 : {'upper_bound' : 1_000},
@@ -397,5 +399,7 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           
           79 : {},
           80 : {'upper_bound' : 100},
-          81 : {}
+          81 : {},
+          82 : {},
+          83 : {}
           }
