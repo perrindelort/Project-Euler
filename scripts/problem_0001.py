@@ -31,5 +31,5 @@ class Problem1(Problem):
 
 
 if __name__ == '__main__':
-    problem = Problem1(upper_bound = 5_000)
+    problem = Problem1(upper_bound = 1_000)
     problem.print_problem()
