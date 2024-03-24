@@ -6,9 +6,19 @@ Created on Thu Mar 21 20:03:46 2024
 """
 
 import os
+from functools import cache
 
 from util.util import timing, format_number
 from scripts.problem import Problem
+
+@cache
+def collatz_sequence(n):
+    if n == 2:
+        return 1
+    if n % 2 == 0:
+        return n//2
+    else:
+        return 3*n+1
 
 class Problem14(Problem):
     def __init__(self, path = os.path.realpath(__file__), **kwargs):
@@ -21,24 +31,20 @@ class Problem14(Problem):
         
         self.detailed_answer = f"The starting number under {format_number(kwargs['upper_bound'])} producing the longest chain is {format_number(self.answer[0])} with a {format_number(self.answer[1])}-long chain"
         
-        # Because we returned 2 arguments
+        # Because we returned 2 arguments for the detailed_answer
         self.answer = self.answer[0]
-    
-    def collatz_sequence(self,n,length):
-        if n==1:
-            return length
-        if n%2==0:
-            return self.collatz_sequence(n//2,length+1)
-        else:
-            return self.collatz_sequence(3*n+1,length+1)
-
     
     @timing
     def solve(self, upper_bound):
+        # May still be improved by keeping tracks of all collatz lengths and if n < i then adding the corresponding lengths
         max_length = 0
         start = 0
         for i in range (1,upper_bound + 1):
-            length = self.collatz_sequence(i,1)
+            length = 1
+            n = i
+            while n != 1:
+                n = collatz_sequence(n)
+                length +=1
             if length > max_length:
                 max_length = length
                 start = i
