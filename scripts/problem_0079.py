@@ -8,8 +8,7 @@ Created on Sun Mar 24 15:45:52 2024
 import os
 import numpy as np 
 
-from util.util import timing, format_number
-from util.funct import load_data_from_txt
+from util.util import timing, format_number, load_data_from_txt
 from scripts.problem import Problem
 
 def get_max(liste):

@@ -6,7 +6,6 @@ Created on Sun Mar 24 17:02:43 2024
 """
 
 import os
-from math import log10
 from util.util import timing, format_number
 from scripts.problem import Problem
 
@@ -46,7 +45,6 @@ class Problem92(Problem):
                 val = add_digits_squared(val)
             occurences[death_loop[val]] += 1
             death_loop[number] = death_loop[val]
-        print(occurences)
         return occurences[89]
 
 

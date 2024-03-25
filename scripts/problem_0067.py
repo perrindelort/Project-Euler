@@ -7,8 +7,7 @@ Created on Sat Mar 23 19:46:15 2024
 
 import os
 
-from util.util import timing, format_number
-from util.funct import load_data_from_txt
+from util.util import timing, format_number, load_data_from_txt
 from scripts.problem import Problem
 
 def new_triangle(triangle):

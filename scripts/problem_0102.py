@@ -8,8 +8,7 @@ Created on Sun Mar 24 17:47:58 2024
 import os
 from shapely import Point, Polygon
 
-from util.util import timing, format_number
-from util.funct import load_data_from_txt
+from util.util import timing, format_number, load_data_from_txt
 from scripts.problem import Problem
 
 class Problem102(Problem):

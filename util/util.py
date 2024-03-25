@@ -6,13 +6,25 @@ Created on Thu Mar 21 00:07:48 2024
 """
 import os
 import re
-from time import perf_counter_ns
+import numpy as np
 import functools
 import textwrap
+from time import perf_counter_ns
 from termcolor import colored
 
 
 from util.const import N_DASHES
+
+def load_data_from_txt(problem_number, split = True, sep =',', use_numpy = False):
+    problem_number_str = str(problem_number).zfill(4)
+    path = f"././data/data/problem_{problem_number_str}.txt"
+    if use_numpy:
+        return np.loadtxt(path, delimiter = sep)
+    file = open(path,'r')
+    if split:
+        return file.read().split(sep = sep)
+    else:
+        return file.read()
 
 def format_number(number):
     return format(number,',')

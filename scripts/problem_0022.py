@@ -7,8 +7,7 @@ Created on Thu Mar 21 23:02:49 2024
 
 import os
 
-from util.util import timing, format_number
-from util.funct import load_data_from_txt
+from util.util import timing, format_number, load_data_from_txt
 from scripts.problem import Problem
 
 class Problem22(Problem):

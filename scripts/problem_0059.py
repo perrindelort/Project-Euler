@@ -8,8 +8,7 @@ Created on Sat Mar 23 17:58:00 2024
 import os
 from collections import Counter
 
-from util.util import timing, format_number
-from util.funct import load_data_from_txt
+from util.util import timing, format_number, load_data_from_txt
 from scripts.problem import Problem
 
 def is_english(ascii1,ascii2):
