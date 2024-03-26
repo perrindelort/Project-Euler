@@ -22,7 +22,10 @@ def load_data_from_txt(problem_number, split = True, sep =',', use_numpy = False
         return np.loadtxt(path, delimiter = sep)
     file = open(path,'r')
     if split:
-        return file.read().split(sep = sep)
+        if sep == '\n':
+            return file.read().split(sep = sep)[:-1]
+        else:
+            return file.read().split(sep = sep)
     else:
         return file.read()
 

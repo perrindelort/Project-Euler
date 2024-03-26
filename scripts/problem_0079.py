@@ -8,7 +8,7 @@ Created on Sun Mar 24 15:45:52 2024
 import os
 import numpy as np 
 
-from util.util import timing, format_number, load_data_from_txt
+from util.util import timing, format_number
 from scripts.problem import Problem
 
 def get_max(liste):
@@ -29,7 +29,7 @@ class Problem79(Problem):
     
     @timing
     def solve(self, **kwargs):
-        lines = load_data_from_txt(self.problem_number, split = False)
+        lines = self.load_data_from_txt(split = False)
         lines_string = lines.strip().split('\n')
         order = np.zeros((10,10))
         for answer in lines_string:

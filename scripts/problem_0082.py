@@ -9,7 +9,7 @@ import os
 from heapy import pqueue
 import numpy as np
 
-from util.util import timing, format_number, load_data_from_txt
+from util.util import timing, format_number
 from scripts.problem import Problem
 
 class Node():
@@ -79,7 +79,7 @@ class Problem82(Problem):
     
     @timing
     def solve(self, **kwargs):
-        matrix = load_data_from_txt(self.problem_number, use_numpy = True)
+        matrix = self.load_data_from_txt(use_numpy = True)
         
         x_max, y_max = np.shape(matrix)
         x_min = 0

@@ -7,7 +7,7 @@ Created on Mon Mar 25 20:36:19 2024
 
 import os
 from collections import Counter
-from util.util import timing, format_number, load_data_from_txt
+from util.util import timing, format_number
 from scripts.problem import Problem
     
 def attribute_value(symbol:str) -> int:
@@ -138,8 +138,7 @@ class Problem54(Problem):
     
     @timing
     def solve(self, **kwargs):
-        lines = load_data_from_txt(self.problem_number, sep = '\n')
-        lines.pop()
+        lines = self.load_data_from_txt(sep = '\n')
         player1_wins = 0
         for line in lines:
             cards = line.split(' ')

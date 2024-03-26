@@ -8,7 +8,7 @@ Created on Sun Mar 24 17:47:58 2024
 import os
 from shapely import Point, Polygon
 
-from util.util import timing, format_number, load_data_from_txt
+from util.util import timing, format_number
 from scripts.problem import Problem
 
 class Problem102(Problem):
@@ -22,9 +22,7 @@ class Problem102(Problem):
     
     @timing
     def solve(self, **kwargs):
-        lines = load_data_from_txt(self.problem_number, sep = '\n')
-        # Last element is empty
-        lines.pop()
+        lines = self.load_data_from_txt(sep = '\n')
         origin = Point(0,0)
         counter = 0
         for idx,line in enumerate(lines):

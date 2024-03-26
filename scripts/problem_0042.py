@@ -7,7 +7,7 @@ Created on Fri Mar 22 22:27:39 2024
 
 import os
 
-from util.util import timing, format_number, load_data_from_txt
+from util.util import timing, format_number
 from scripts.problem import Problem
 
 class Problem42(Problem):
@@ -21,7 +21,7 @@ class Problem42(Problem):
     
     @timing
     def solve(self, **kwargs):
-        lines = load_data_from_txt(self.problem_number)
+        lines = self.load_data_from_txt()
         score_lines = []
         for line in lines:
             score = 0

@@ -7,7 +7,7 @@ Created on Thu Mar 21 13:29:41 2024
 
 from util.statements import get_statement
 from util.titles import get_title
-from util.util import get_problem_number_from_filename, format_statement_answer, timing
+from util.util import get_problem_number_from_filename, format_statement_answer, load_data_from_txt, timing
 from util.const import ANSWERS
 
 class Problem():
@@ -25,6 +25,12 @@ class Problem():
     
     def assert_answer(self):
         return str(self.answer) == str(self.true_answer)
+    
+    def load_data_from_txt(self, split = True, sep =',', use_numpy = False):
+        return load_data_from_txt(problem_number = self.problem_number,
+                                  split = split,
+                                  sep = sep,
+                                  use_numpy = use_numpy)
     
     def print_problem(self):
         format_statement_answer(problem_number = self.problem_number,

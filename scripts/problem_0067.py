@@ -7,7 +7,7 @@ Created on Sat Mar 23 19:46:15 2024
 
 import os
 
-from util.util import timing, format_number, load_data_from_txt
+from util.util import timing, format_number
 from scripts.problem import Problem
 
 def new_triangle(triangle):
@@ -44,7 +44,7 @@ class Problem67(Problem):
     
     @timing
     def solve(self, **kwargs):
-        lines = load_data_from_txt(self.problem_number, split = False)
+        lines = self.load_data_from_txt(split = False)
         lines_string = lines.strip().split('\n')
         triangle = []
         for line in lines_string:
