@@ -72,7 +72,7 @@ TITLE = {1 : 'Multiples of 3 or 5',
          61 : 'Cyclical Figurate Numbers',
          62 : 'Cubic Permutations',
          63 : 'Powerful Digit Counts',
-         
+         64 : 'Odd Period Square Roots',
          65 : 'Convergents of e',
          
          67 : 'Maximum Path Sum II',
@@ -178,7 +178,7 @@ ANSWERS = {1 : 233_168,
            61 : 28_684,
            62 : 127_035_954_683,
            63 : 49,
-           
+           64 : 1_322,
            65 : 272,
            
            67 : 7_273,
@@ -423,7 +423,8 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           61 : {},
           62 : {'number_of_permutations' : 5},
           63 : {},
-          
+          64 : {'upper_bound' : 10_000,
+                'precision' : 215},
           65 : {'term_number' : 100},
           
           67 : {},

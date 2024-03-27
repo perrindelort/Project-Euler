@@ -5,7 +5,7 @@ Created on Thu Mar 21 22:51:21 2024
 @author: Antoine
 """
 
-import math
+from math import sqrt, ceil
 from collections import Counter
 from functools import cache
 from primePy import primes
@@ -77,12 +77,15 @@ def is_pan_digital(string):
 
 def is_pentagonal(integer):
     if integer != 0:
-        n = math.ceil((integer*2/3)**0.5)
+        n = ceil((integer*2/3)**0.5)
         return 0.5*(n*(3*n-1)) == integer
     return False
 
 def is_hexagonal(integer):
     if integer != 0:
-        n = math.ceil((integer/2)**0.5)
+        n = ceil((integer/2)**0.5)
         return n*(2*n-1) == integer
+    
+def is_perfect_square(number):
+    return int(sqrt(number)+0.5) ** 2 == number
 
