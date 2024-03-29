@@ -25,7 +25,7 @@ def calc_length_period(sqrt_integer):
     k_n2, k_n1 = 1, 0
     length = 0
     
-    while True:
+    while a_n != a_0*2:
         
         h_n = a_n * h_n1 + h_n2
         k_n = a_n * k_n1 + k_n2
@@ -36,8 +36,7 @@ def calc_length_period(sqrt_integer):
         a_n = int(-(sqrt_integer * k_n2 - h_n2)/( sqrt_integer * k_n1 - h_n1))
         length += 1
         
-        if a_n == a_0*2:
-            return length
+    return length
 
 class Problem64(Problem):
     def __init__(self, path = os.path.realpath(__file__), **kwargs):
