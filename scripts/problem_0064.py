@@ -33,8 +33,6 @@ def calc_length_period(sqrt_integer):
         
         k_n1, k_n2 = k_n, k_n1
         h_n1, h_n2 = h_n, h_n1
-        #x_n = -(sqrt_integer * k_n2 - h_n2)/( sqrt_integer * k_n1 - h_n1)
-        #a_n = int(x_n)
         a_n = int(-(sqrt_integer * k_n2 - h_n2)/( sqrt_integer * k_n1 - h_n1))
         length += 1
         
