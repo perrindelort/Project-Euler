@@ -36,7 +36,6 @@ class Problem39(Problem):
                         c = m**2+n**2
                         L.append([a,b,c])
             pythagorean_triples = np.array(L)
-            #pythagoreanTriples.sort()
             return pythagorean_triples
     
     @timing

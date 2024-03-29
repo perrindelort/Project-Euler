@@ -35,7 +35,6 @@ class Problem37(Problem):
                 else: 
                     truncatable_primes_list.append(integer)
             integer += 2
-        print(truncatable_primes_list)
         return sum(truncatable_primes_list)
 
 

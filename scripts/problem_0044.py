@@ -25,7 +25,7 @@ class Problem44(Problem):
     def solve(self, **kwargs):
         pentagonal_numbers_list = [1,5]
         n = 2
-        while 1 == 1 : #Stylé la boucle
+        while True:
             for pentagonal_number in pentagonal_numbers_list:
                 if is_pentagonal(pentagonal_numbers_list[-1] - pentagonal_number):
                     if is_pentagonal(pentagonal_numbers_list[-1] + pentagonal_number):

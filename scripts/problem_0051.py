@@ -67,8 +67,6 @@ class Problem51(Problem):
                     number = int(pattern.replace('*',digit))
                     if isprime(number):
                         primes.add(number)
-                if prime == 121313:
-                    print(pattern, primes)
                 if len(primes) == target:
                     return min(primes), primes
                 

@@ -29,9 +29,6 @@ class Problem9(Problem):
                 for a in range(b):
                     if (a**2+b**2==c**2):
                         if (a+b+c==target):
-                            # print ("a : ",a)
-                            # print("b : ",b)
-                            # print("c : ",c)
                             return (a*b*c, a, b, c)
                         
 
