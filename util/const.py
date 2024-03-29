@@ -74,7 +74,7 @@ TITLE = {1 : 'Multiples of 3 or 5',
          63 : 'Powerful Digit Counts',
          64 : 'Odd Period Square Roots',
          65 : 'Convergents of e',
-         
+         66 : 'Diophantine Equation',
          67 : 'Maximum Path Sum II',
          
          69 : 'Totient Maximum',
@@ -180,7 +180,7 @@ ANSWERS = {1 : 233_168,
            63 : 49,
            64 : 1_322,
            65 : 272,
-           
+           66 : 661,
            67 : 7_273,
            
            69 : 510_510,
@@ -426,7 +426,8 @@ KWARGS = {1 : {'upper_bound' : 1_000},
           64 : {'upper_bound' : 10_000,
                 'precision' : 215},
           65 : {'term_number' : 100},
-          
+          66 : {'upper_bound' : 1_000,
+                'precision' : 75},
           67 : {},
           
           69 : {'upper_bound' : 1_000_000},
