@@ -1,7 +1,9 @@
 import re
+import type_enforced
 
 from abc import ABC, abstractmethod
-from typing import Optional, Any
+from typing import Optional, Union, Any, AnyStr, List
+from numpy.typing import NDArray
 
 from util.statements import get_statement
 from util.titles import get_title
@@ -13,6 +15,7 @@ from util.util import (
 from util.const import ANSWERS
 
 
+@type_enforced.Enforcer
 class Problem(ABC):
     problem_number: int
     title: str
@@ -37,7 +40,7 @@ class Problem(ABC):
     def solve(self, **kwargs) -> Any:
         raise NotImplementedError
 
-    def assert_answer(self) -> None:
+    def assert_answer(self) -> bool:
         return str(self.answer) == str(self.true_answer)
 
     def load_data_from_txt(
@@ -45,7 +48,9 @@ class Problem(ABC):
         split: Optional[bool] = True,
         sep: Optional[str] = ",",
         use_numpy: Optional[bool] = False,
-    ) -> None:
+    ) -> Union[str, NDArray, List[Union[str, NDArray]]]:
+        # TODO : move load_data_from_txt from util to abstract problem
+        # TODO : better type hints
         return load_data_from_txt(
             problem_number=self.problem_number,
             split=split,

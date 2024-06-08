@@ -1,16 +1,11 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Mar 21 00:07:48 2024
-
-@author: Antoine
-"""
 import os
 import re
 import numpy as np
 import functools
 import textwrap
 
-from typing import Optional, Callable
+from typing import Callable, Optional, Union, Any, AnyStr, List
+from numpy.typing import NDArray
 from time import perf_counter_ns
 from termcolor import colored
 
@@ -23,7 +18,8 @@ def load_data_from_txt(
     split: Optional[bool] = True,
     sep: Optional[str] = ",",
     use_numpy: Optional[bool] = False,
-):
+) -> Union[str, NDArray, List[Union[str, NDArray]]]:
+    # TODO : better type hints
     problem_number_str = str(problem_number).zfill(4)
     path = f"././data/data/problem_{problem_number_str}.txt"
     if use_numpy:
