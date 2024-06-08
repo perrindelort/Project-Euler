@@ -9,7 +9,10 @@ import argparse
 
 
 class ProjectEulerArgumentParser(argparse.ArgumentParser):
-    def __init__(self, description="coucou!"):
+    def __init__(
+        self,
+        description="Parse arguments to launch any Project's Euler solution from main",
+    ):
         super().__init__(description=description)
         self.add_argument(
             "-n",
