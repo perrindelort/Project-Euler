@@ -1,27 +1,23 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Mar 21 22:19:44 2024
-
-@author: Antoine
-"""
-
-import os
+from typing import List
 
 from util.util import timing, format_number
-from scripts.problem import Problem
+from scripts.abstract_problem import Problem
+
 
 class Problem18(Problem):
-    def __init__(self, path = os.path.realpath(__file__), **kwargs):
-        super().__init__(path)
-        
-        if 'triangle_string' not in kwargs.keys():
+    def __init__(self, **kwargs):
+        super().__init__()
+
+        if "triangle_string" not in kwargs.keys():
             raise ValueError("triangle_string not specified")
-        
-        self.answer, self.time_taken = self.solve(triangle_string = kwargs['triangle_string'])
-        
+
+        self.answer, self.time_taken = self.solve(
+            triangle_string=kwargs["triangle_string"]
+        )
+
         self.detailed_answer = f"The maximum total from top to bottom of the given triangle is {format_number(self.answer)}"
-            
-    def new_triangle(self,triangle):
+
+    def new_triangle(self, triangle: List[str]) -> int:
         new_triangle = triangle
         new_line = []
         last_line = new_triangle.pop()
@@ -37,25 +33,25 @@ class Problem18(Problem):
         for i in range(len(before_last_line)):
             l = []
             l.append(int(last_line[i]))
-            l.append(int(last_line[i+1]))
-            new_line.append(max(l)+int(before_last_line[i]))
+            l.append(int(last_line[i + 1]))
+            new_line.append(max(l) + int(before_last_line[i]))
         new_triangle.append(new_line)
         # print("nouveau triangle est de taille : ",len(nouveau_triangle))
         # for ligne in nouveau_triangle:
-            # print(ligne)
-        return new_triangle    
-                
-    
+        # print(ligne)
+        return new_triangle
+
     @timing
     def solve(self, triangle_string):
         new_triangle = self.new_triangle(triangle_string)
-        while len(new_triangle)!=1:
+        while len(new_triangle) != 1:
             new_triangle = self.new_triangle(new_triangle)
         return new_triangle[0][0]
 
 
-if __name__ == '__main__':
-    problem = Problem18(triangle_string = """75
+if __name__ == "__main__":
+    problem = Problem18(
+        triangle_string="""75
                                              95 64
                                              17 47 82
                                              18 35 87 10
@@ -69,5 +65,8 @@ if __name__ == '__main__':
                                              70 11 33 28 77 73 17 78 39 68 17 57
                                              91 71 52 38 17 14 91 43 58 50 27 29 48
                                              63 66 04 68 89 53 67 30 73 16 69 87 40 31
-                                             04 62 98 27 23 09 70 98 73 93 38 53 60 04 23""".split("\n"))
+                                             04 62 98 27 23 09 70 98 73 93 38 53 60 04 23""".split(
+            "\n"
+        )
+    )
     problem.print_problem()

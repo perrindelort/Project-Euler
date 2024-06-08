@@ -1,17 +1,13 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Mar 24 17:23:40 2024
-
-@author: Antoine
-"""
-
-import os
 import numba as nb
 
-from util.util import timing, format_number
-from scripts.problem import Problem
+from typing import List, Tuple
 
-@nb.njit('List(int64)(int64)')
+from util.util import timing, format_number
+from scripts.abstract_problem import Problem
+
+
+# TODO : move function to utils
+@nb.njit("List(int64)(int64)")
 def get_prime_divisors(n):
     divisors = []
     while n % 2 == 0:
@@ -21,8 +17,8 @@ def get_prime_divisors(n):
         divisors.append(3)
         n //= 3
     i = 5
-    while i*i <= n:
-        for k in (i, i+2):
+    while i * i <= n:
+        for k in (i, i + 2):
             while n % k == 0:
                 divisors.append(k)
                 n //= k
@@ -31,7 +27,8 @@ def get_prime_divisors(n):
         divisors.append(n)
     return divisors
 
-@nb.njit('List(int64)(int64)')
+
+@nb.njit("List(int64)(int64)")
 def get_divisors(n):
     divisors = []
     if n == 1:
@@ -57,7 +54,7 @@ def get_divisors(n):
     return divisors
 
 
-def get_chain(integer,supremum):
+def get_chain(integer, supremum):
     is_amicable = False
     new_member = integer
     amicable_chain = []
@@ -65,7 +62,7 @@ def get_chain(integer,supremum):
         new_member = sum(get_divisors(new_member))
         if new_member == integer:
             is_amicable = True
-        elif new_member < integer :
+        elif new_member < integer:
             break
         elif new_member in amicable_chain:
             break
@@ -73,26 +70,27 @@ def get_chain(integer,supremum):
             amicable_chain.append(new_member)
     return is_amicable, amicable_chain
 
+
 class Problem95(Problem):
-    def __init__(self, path = os.path.realpath(__file__), **kwargs):
-        super().__init__(path)
-        
-        if 'upper_bound' not in kwargs.keys():
+    def __init__(self, **kwargs):
+        super().__init__()
+
+        if "upper_bound" not in kwargs.keys():
             raise ValueError("upper_bound not specified")
-        
-        self.answer, self.time_taken = self.solve(upper_bound = kwargs['upper_bound'])
-        
+
+        self.answer, self.time_taken = self.solve(upper_bound=kwargs["upper_bound"])
+
         self.detailed_answer = f"The smallest member of the longest amicable chain with no element exceeding {format_number(kwargs['upper_bound'])} is {format_number(self.answer[0])}.\nThe longest chains is made of {format_number(len(self.answer[1]))} which are {' → '.join([str(number) for number in self.answer[1]])}"
         # We returned 2 values for the detailed_answer
         self.answer = self.answer[0]
-    
+
     @timing
-    def solve(self, upper_bound):
+    def solve(self, upper_bound: int) -> Tuple[int, List[int]]:
         max_chain = []
         amicable_numbers = set([])
-        for current_number in range(220,upper_bound):
+        for current_number in range(220, upper_bound):
             if current_number not in amicable_numbers:
-                is_amicable, amicable_chain = get_chain(current_number,upper_bound)
+                is_amicable, amicable_chain = get_chain(current_number, upper_bound)
             if is_amicable:
                 for amicable_number in amicable_chain:
                     amicable_numbers.add(amicable_number)
@@ -102,6 +100,6 @@ class Problem95(Problem):
         return min(max_chain), max_chain
 
 
-if __name__ == '__main__':
-    problem = Problem95(upper_bound = 1_000_000)
+if __name__ == "__main__":
+    problem = Problem95(upper_bound=1_000_000)
     problem.print_problem()

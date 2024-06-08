@@ -1,69 +1,108 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Mar 21 18:32:28 2024
-
-@author: Antoine
-"""
-
-import os
 import re
 
+from typing import List
+
 from util.util import timing, format_number
-from scripts.problem import Problem
+from scripts.abstract_problem import Problem
+
 
 class Problem11(Problem):
-    def __init__(self, path = os.path.realpath(__file__), **kwargs):
-        super().__init__(path)
-        
-        if 'matrice' not in kwargs.keys():
+    def __init__(self, **kwargs):
+        super().__init__()
+
+        if "matrice" not in kwargs.keys():
             raise ValueError("matrice not specified")
-        
-        self.answer, self.time_taken = self.solve(matrice = kwargs['matrice'])
-        
+
+        self.answer, self.time_taken = self.solve(matrice=kwargs["matrice"])
+
         self.detailed_answer = f"The greatest product of four adjacents number in the same direction in the given grid is {format_number(self.answer)}"
-            
-    
+
     @timing
-    def solve(self, matrice):
+    def solve(self, matrice: List[str]) -> int:
         produit = 0
         for i in range(400):
-            if (0<=i-63):
-                p = int(matrice[i])*int(matrice[i-21])*int(matrice[i-42])*int(matrice[i-63])
-                if p>produit:
+            if 0 <= i - 63:
+                p = (
+                    int(matrice[i])
+                    * int(matrice[i - 21])
+                    * int(matrice[i - 42])
+                    * int(matrice[i - 63])
+                )
+                if p > produit:
                     produit = p
-            if (i+63<=399):
-                p = int(matrice[i])*int(matrice[i+21])*int(matrice[i+22])*int(matrice[i+23])
-                if p>produit:
+            if i + 63 <= 399:
+                p = (
+                    int(matrice[i])
+                    * int(matrice[i + 21])
+                    * int(matrice[i + 22])
+                    * int(matrice[i + 23])
+                )
+                if p > produit:
                     produit = p
-            if (0<=i-60):
-                p = int(matrice[i])*int(matrice[i-20])*int(matrice[i-40])*int(matrice[i-60])
-                if p>produit:
+            if 0 <= i - 60:
+                p = (
+                    int(matrice[i])
+                    * int(matrice[i - 20])
+                    * int(matrice[i - 40])
+                    * int(matrice[i - 60])
+                )
+                if p > produit:
                     produit = p
-            if (i+60<=399):
-                p = int(matrice[i])*int(matrice[i+20])*int(matrice[i+40])*int(matrice[i+60])
-                if p>produit:
+            if i + 60 <= 399:
+                p = (
+                    int(matrice[i])
+                    * int(matrice[i + 20])
+                    * int(matrice[i + 40])
+                    * int(matrice[i + 60])
+                )
+                if p > produit:
                     produit = p
-            if (i+3<=399):
-                p= int(matrice[i])*int(matrice[i+1])*int(matrice[i+2])*int(matrice[i+3])
-                if p>produit:
+            if i + 3 <= 399:
+                p = (
+                    int(matrice[i])
+                    * int(matrice[i + 1])
+                    * int(matrice[i + 2])
+                    * int(matrice[i + 3])
+                )
+                if p > produit:
                     produit = p
-            if (0<=i-3):
-                p= int(matrice[i])*int(matrice[i-1])*int(matrice[i-2])*int(matrice[i-3])
-                if p>produit:
+            if 0 <= i - 3:
+                p = (
+                    int(matrice[i])
+                    * int(matrice[i - 1])
+                    * int(matrice[i - 2])
+                    * int(matrice[i - 3])
+                )
+                if p > produit:
                     produit = p
-            if (i+57<=399):
-                p= int(matrice[i])*int(matrice[i+19])*int(matrice[i+38])*int(matrice[i+57])
-                if p>produit:
+            if i + 57 <= 399:
+                p = (
+                    int(matrice[i])
+                    * int(matrice[i + 19])
+                    * int(matrice[i + 38])
+                    * int(matrice[i + 57])
+                )
+                if p > produit:
                     produit = p
-            if (0<=i-57):
-                p= int(matrice[i])*int(matrice[i-19])*int(matrice[i-38])*int(matrice[i-57])
-                if p>produit:
+            if 0 <= i - 57:
+                p = (
+                    int(matrice[i])
+                    * int(matrice[i - 19])
+                    * int(matrice[i - 38])
+                    * int(matrice[i - 57])
+                )
+                if p > produit:
                     produit = p
         return produit
 
 
-if __name__ == '__main__':
-    problem = Problem11(matrice = [s for s in re.split("\n| ", '''8 2 22 97 38 15 0 40 0 75 4 5 7 78 52 12 50 77 91 8
+if __name__ == "__main__":
+    problem = Problem11(
+        matrice=[
+            s
+            for s in re.split(
+                "\n| ",
+                """8 2 22 97 38 15 0 40 0 75 4 5 7 78 52 12 50 77 91 8
                                                                 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 4 56 62 0
                                                                 81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 3 49 13 36 65
                                                                 52 70 95 23 04 60 11 42 69 24 68 56 01 32 56 71 37 02 36 91
@@ -82,5 +121,9 @@ if __name__ == '__main__':
                                                                 04 42 16 73 38 25 39 11 24 94 72 18 08 46 29 32 40 62 76 36
                                                                 20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 4 36 16
                                                                 20 73 35 29 78 31 90 1 74 31 49 71 48 86 81 16 23 57 5 54
-                                                                1 70 54 71 83 51 54 69 16 92 33 48 61 43 52 1 89 19 67 48''') if s != ''])
+                                                                1 70 54 71 83 51 54 69 16 92 33 48 61 43 52 1 89 19 67 48""",
+            )
+            if s != ""
+        ]
+    )
     problem.print_problem()
